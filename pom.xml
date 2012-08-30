@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dk.statsbiblioteket.medieplatform</groupId>
+    <artifactId>vhs-ingest-workflow</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <yousee.home>$YOUSEE_HOME</yousee.home>
+        <yousee.logs>logs</yousee.logs>
+        <yousee.locks>locks</yousee.locks>
+        <yousee.workflow.dependencies>workflowDependencies</yousee.workflow.dependencies>
+        <yousee.workflow.dir>taverna</yousee.workflow.dir>
+        <yousee.workflow.config>${yousee.config}/youseeingestworkflow</yousee.workflow.config>
+        <yousee.script.dir>scripts</yousee.script.dir>
+        <yousee.components.dir>components</yousee.components.dir>
+        <yousee.bin>bin</yousee.bin>
+
+        <integrationtest.basedir>$HOME/yousee-workflow</integrationtest.basedir>
+        <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
+        <yousee.config>${integrationtest.basedir}/services/conf</yousee.config>
+
+        <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
+        <yousee.bitrepository.ingester>yousee-bitrepository-ingester</yousee.bitrepository.ingester>
+        <yousee.digitv.ingester>yousee-digitv-ingester</yousee.digitv.ingester>
+        <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
+        <crosscheck.profile.validator>crosscheck-profile-validator</crosscheck.profile.validator>
+        <profile.validator>profile-validator</profile.validator>
+        <yousee.doms.ingester>yousee-doms-ingester</yousee.doms.ingester>
+        <crosscheck.characteriser>crosscheck-characteriser</crosscheck.characteriser>
+        <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
+        <master.validator>master-validator</master.validator>
+        <yousee.ingest.workflow>yousee-ingest-workflow</yousee.ingest.workflow>
+        <yousee.ingest.workflow.completed>${yousee.ingest.workflow}-completed</yousee.ingest.workflow.completed>
+        <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
+
+    </properties>
+
+    <dependencies>
+       <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <!--Yousee Ingest Initiator-->
+<!--        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${yousee.ingest.initiator}</artifactId>
+            <version>1.1.4</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>-->
+
+
+        <!--Yousee Bitrepository Ingester-->
+<!--        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${yousee.bitrepository.ingester}</artifactId>
+            <version>0.4</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>-->
+
+
+        <!--Yousee FFProbe Profile Validator-->
+        <!--Yousee CrossCheck Profile Validator-->
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${profile.validator}</artifactId>
+            <version>0.4</version>
+            <type>zip</type>
+        </dependency>
+
+
+
+        <!--Yousee Digitv Ingester-->
+<!--        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${yousee.digitv.ingester}</artifactId>
+            <version>0.3.2</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>-->
+
+
+        <!--Yousee Doms Ingester-->
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${yousee.doms.ingester}</artifactId>
+            <version>0.1.1</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>
+
+
+<!--        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${yousee.downloader}</artifactId>
+            <version>2.1</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>-->
+
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${ffprobe.characteriser}</artifactId>
+            <version>0.8</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${crosscheck.characteriser}</artifactId>
+            <version>0.8</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>sbprojects-nexus</id>
+            <url>
+                https://sbprojects.statsbiblioteket.dk/nexus/content/groups/public
+            </url>
+        <releases>
+           <enabled>true</enabled>
+        </releases>
+        <snapshots>
+           <enabled>true</enabled>
+        </snapshots>
+    </repository>
+</repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.2.2</version>
+                <configuration>
+                    <descriptors>
+                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                    </descriptors>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+
+        <profile>
+            <id>integrationTestProfile</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.7</version>
+                        <executions>
+                            <execution>
+                                <id>Extract zip bundle</id>
+
+                                <phase>pre-integration-test</phase>
+                                <configuration>
+                                    <target>
+
+                                        <!-- Requires that a private/public key login has been enabled for this account -->
+                                        <scp file="${project.build.directory}/${project.build.finalName}-bundle.zip" toDir="yousee@canopus:${integrationtest.basedir}" keyfile="${env.passwordlessKey}" />
+                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; rm -r ${project.build.finalName}; unzip ${project.build.finalName}-bundle.zip; rm -r ${integrationtest.workflowdir}; mkdir ${integrationtest.workflowdir}; mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;                                            " failonerror="true" />
+                                        <!--Find deply folder ${project.build.outputDirectory}-->
+                                        <!--unzip package-->
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <phase>integration-test</phase>
+                                <id>run taverna</id>
+
+                                <configuration>
+
+                                    <!--Verify that taverna is there-->
+                                    <!--Set taverna home-->
+                                    <!--set YouseeConfig-->
+                                    <!--Run workflow-->
+
+                                    <target>
+                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command="${integrationtest.workflowdir}/integrationTests/runIntegrationTests.sh" failonerror="true">
+                                        </sshexec>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.apache.ant</groupId>
+                                <artifactId>ant-jsch</artifactId>
+                                <version>1.8.2</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>deploy2test</id>
+
+        </profile>
+    </profiles>
+
+</project>

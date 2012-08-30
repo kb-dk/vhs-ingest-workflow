@@ -1,0 +1,187 @@
+<assembly>
+
+    <id>bundle</id>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+    <!--<includeBaseDirectory>false</includeBaseDirectory>-->
+
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.workflow.dependencies}</outputDirectory>
+            <useTransitiveDependencies>true</useTransitiveDependencies>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+            <includes>
+                <include>com.googlecode.json-simple:json-simple</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <includes>
+                <include>${medieplatform}:${ffprobe.characteriser}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <includes>
+                <include>${medieplatform}:${crosscheck.characteriser}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.components.dir}/${profile.validator}/bin</outputDirectory>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <includes>
+                <include>${medieplatform}:${profile.validator}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/external-products</outputDirectory>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <excludes>
+                    <exclude>${yousee.doms.ingester}-*.jar</exclude>
+                </excludes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${yousee.doms.ingester}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/bin</outputDirectory>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <includes>
+                    <include>${yousee.doms.ingester}-*.jar</include>
+                </includes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${yousee.doms.ingester}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+    </dependencySets>
+
+
+    <fileSets>
+
+        <fileSet>
+            <outputDirectory>${yousee.bin}</outputDirectory>
+            <directory>src/main/bin</directory>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </fileSet>
+        <fileSet>
+            <outputDirectory>integrationTests</outputDirectory>
+            <directory>src/main/integrationTests</directory>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <directory>src/main/env</directory>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </fileSet>
+
+  <fileSet>
+            <outputDirectory>${yousee.components.dir}</outputDirectory>
+            <directory>src/main/components</directory>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </fileSet>
+
+
+        <fileSet>
+            <outputDirectory>${yousee.workflow.dir}</outputDirectory>
+            <directory>src/main/taverna</directory>
+            <filtered>true</filtered>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>examples</outputDirectory>
+            <directory>src/main/examples</directory>
+        </fileSet>
+    </fileSets>
+
+    <files>
+ <file>
+            <source>src/main/scripts/bitstorage.ingest.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${bitstorage.ingest}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+
+        <file>
+            <source>src/main/scripts/crosscheck.characteriser.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${crosscheck.characteriser}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/crosscheck.profile.validator.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${crosscheck.profile.validator}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/ffprobe.characteriser.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${ffprobe.characteriser}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/ffprobe.profile.validator.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${ffprobe.profile.validator}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/yousee.doms.ingester.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${yousee.doms.ingester}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/master.validator.sh</source>
+            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <destName>${master.validator}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+    </files>
+
+
+</assembly>
+
