@@ -3,7 +3,7 @@
     <id>bundle</id>
 
     <formats>
-        <format>zip</format>
+        <format>tar.gz</format>
     </formats>
     <!--<includeBaseDirectory>false</includeBaseDirectory>-->
 
@@ -11,6 +11,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.workflow.dependencies}</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <includes>
@@ -22,6 +23,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
@@ -33,6 +35,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
@@ -45,6 +48,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.components.dir}/${profile.validator}/bin</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
@@ -56,6 +60,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/external-products</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -71,6 +76,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/bin</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -92,6 +98,7 @@
         <fileSet>
             <outputDirectory>${yousee.bin}</outputDirectory>
             <directory>src/main/bin</directory>
+            <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
@@ -105,13 +112,15 @@
         <fileSet>
             <outputDirectory>${yousee.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
+            <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
 
-  <fileSet>
+        <fileSet>
             <outputDirectory>${yousee.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
+            <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
@@ -119,18 +128,20 @@
 
         <fileSet>
             <outputDirectory>${yousee.workflow.dir}</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <directory>src/main/taverna</directory>
             <filtered>true</filtered>
         </fileSet>
 
         <fileSet>
             <outputDirectory>examples</outputDirectory>
+            <directoryMode>0744</directoryMode>
             <directory>src/main/examples</directory>
         </fileSet>
     </fileSets>
 
     <files>
- <file>
+        <file>
             <source>src/main/scripts/bitstorage.ingest.sh</source>
             <outputDirectory>${yousee.script.dir}</outputDirectory>
             <destName>${bitstorage.ingest}.sh</destName>

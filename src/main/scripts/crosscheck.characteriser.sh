@@ -13,8 +13,9 @@ source env.sh
 APPDIR="$YOUSEE_COMPONENTS/${crosscheck.characteriser}"
 
 #CMD="$APPDIR/bin/crosscheckCharacterise.sh $LOCALFILE $CONFIGFILE"
-CMD="cat $YOUSEE_HOME/examples/crossCheck_output.xml"
-OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
+#CMD="cat $YOUSEE_HOME/examples/crossCheck_output.xml"
+#OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
+OUTPUT="OK"
 
 RETURNCODE=$?
 echo "$OUTPUT"

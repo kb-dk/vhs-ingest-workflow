@@ -19,9 +19,9 @@
         <yousee.components.dir>components</yousee.components.dir>
         <yousee.bin>bin</yousee.bin>
 
-        <integrationtest.basedir>$HOME/yousee-workflow</integrationtest.basedir>
+        <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
         <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
-        <yousee.config>${integrationtest.basedir}/services/conf</yousee.config>
+        <yousee.config>$HOME/vhs-ingest-config</yousee.config>
 
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
         <yousee.bitrepository.ingester>yousee-bitrepository-ingester</yousee.bitrepository.ingester>
@@ -36,7 +36,7 @@
         <yousee.ingest.workflow>yousee-ingest-workflow</yousee.ingest.workflow>
         <yousee.ingest.workflow.completed>${yousee.ingest.workflow}-completed</yousee.ingest.workflow.completed>
         <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -47,27 +47,6 @@
             <scope>compile</scope>
         </dependency>
 
-
-        <!--Yousee Ingest Initiator-->
-<!--        <dependency>
-            <groupId>${medieplatform}</groupId>
-            <artifactId>${yousee.ingest.initiator}</artifactId>
-            <version>1.1.4</version>
-            <classifier>bundle</classifier>
-            <type>zip</type>
-        </dependency>-->
-
-
-        <!--Yousee Bitrepository Ingester-->
-<!--        <dependency>
-            <groupId>${medieplatform}</groupId>
-            <artifactId>${yousee.bitrepository.ingester}</artifactId>
-            <version>0.4</version>
-            <classifier>bundle</classifier>
-            <type>zip</type>
-        </dependency>-->
-
-
         <!--Yousee FFProbe Profile Validator-->
         <!--Yousee CrossCheck Profile Validator-->
         <dependency>
@@ -76,18 +55,6 @@
             <version>0.4</version>
             <type>zip</type>
         </dependency>
-
-
-
-        <!--Yousee Digitv Ingester-->
-<!--        <dependency>
-            <groupId>${medieplatform}</groupId>
-            <artifactId>${yousee.digitv.ingester}</artifactId>
-            <version>0.3.2</version>
-            <classifier>bundle</classifier>
-            <type>zip</type>
-        </dependency>-->
-
 
         <!--Yousee Doms Ingester-->
         <dependency>
@@ -98,15 +65,6 @@
             <type>zip</type>
         </dependency>
 
-
-<!--        <dependency>
-            <groupId>${medieplatform}</groupId>
-            <artifactId>${yousee.downloader}</artifactId>
-            <version>2.1</version>
-            <classifier>bundle</classifier>
-            <type>zip</type>
-        </dependency>-->
-
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${ffprobe.characteriser}</artifactId>
@@ -114,8 +72,6 @@
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
-
-
 
         <dependency>
             <groupId>${medieplatform}</groupId>
@@ -184,8 +140,9 @@
                                     <target>
 
                                         <!-- Requires that a private/public key login has been enabled for this account -->
-                                        <scp file="${project.build.directory}/${project.build.finalName}-bundle.zip" toDir="yousee@canopus:${integrationtest.basedir}" keyfile="${env.passwordlessKey}" />
-                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; rm -r ${project.build.finalName}; unzip ${project.build.finalName}-bundle.zip; rm -r ${integrationtest.workflowdir}; mkdir ${integrationtest.workflowdir}; mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;                                            " failonerror="true" />
+                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; rm -rf vhs-ingest*; rm -rf services/*;" failonerror="true" />
+                                        <scp file="${project.build.directory}/${project.build.finalName}-bundle.tar.gz" toDir="yousee@canopus:${integrationtest.basedir}" keyfile="${env.passwordlessKey}" />
+                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; tar xfz ${project.build.finalName}-bundle.tar.gz; mkdir ${integrationtest.workflowdir}; mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;                                            " failonerror="true" />
                                         <!--Find deply folder ${project.build.outputDirectory}-->
                                         <!--unzip package-->
                                     </target>

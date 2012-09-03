@@ -31,8 +31,8 @@ if [ -z "$JAVA_HOME" ]; then
    exit 1
 fi
 
-if [ -z "$YOUSEE_CONFIG" ]; then
-   echo "YOUSEE_CONFIG is not set. Must be set before execution. Exiting"
+if [ -z "$YOUSEE_WORKFLOW_CONFIG" ]; then
+   echo "YOUSEE_WORKFLOW_CONFIG is not set. Must be set before execution. Exiting"
    exit 1
 fi
 
@@ -40,7 +40,7 @@ fi
 
 mkdir -p $YOUSEE_LOGS
 mkdir -p $YOUSEE_LOCKS
-
+echo $JAVA_HOME
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
 -inputvalue mpgfile "$1"  \
