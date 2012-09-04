@@ -2,9 +2,9 @@
 
 cd $(dirname $(readlink -f $0))
 
-source $YOUSEE_WORKFLOW_CONFIG/combinedProperties.sh
-source $YOUSEE_WORKFLOW_CONFIG/statemonitorClientConfig.sh
-source $YOUSEE_WORKFLOW_CONFIG/componentLoggingConfig.sh
+source $VHSINGEST_WORKFLOW_CONFIG/combinedProperties.sh
+source $VHSINGEST_WORKFLOW_CONFIG/statemonitorClientConfig.sh
+source $VHSINGEST_WORKFLOW_CONFIG/componentLoggingConfig.sh
 
 source loggingEntity.sh
 mkdir -p $LOGDIR

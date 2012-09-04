@@ -9,32 +9,32 @@
 
 
     <properties>
-        <yousee.home>$YOUSEE_HOME</yousee.home>
-        <yousee.logs>logs</yousee.logs>
-        <yousee.locks>locks</yousee.locks>
-        <yousee.workflow.dependencies>workflowDependencies</yousee.workflow.dependencies>
-        <yousee.workflow.dir>taverna</yousee.workflow.dir>
-        <yousee.workflow.config>${yousee.config}/youseeingestworkflow</yousee.workflow.config>
-        <yousee.script.dir>scripts</yousee.script.dir>
-        <yousee.components.dir>components</yousee.components.dir>
-        <yousee.bin>bin</yousee.bin>
+        <vhsingest.home>$VHSINGEST_HOME</vhsingest.home>
+        <vhsingest.logs>logs</vhsingest.logs>
+        <vhsingest.locks>locks</vhsingest.locks>
+        <vhsingest.workflow.dependencies>workflowDependencies</vhsingest.workflow.dependencies>
+        <vhsingest.workflow.dir>taverna</vhsingest.workflow.dir>
+        <vhsingest.workflow.config>${vhsingest.config}/youseeingestworkflow</vhsingest.workflow.config>
+        <vhsingest.script.dir>scripts</vhsingest.script.dir>
+        <vhsingest.components.dir>components</vhsingest.components.dir>
+        <vhsingest.bin>bin</vhsingest.bin>
 
         <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
         <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
-        <yousee.config>$HOME/vhs-ingest-config</yousee.config>
+        <vhsingest.config>$HOME/vhs-ingest-config</vhsingest.config>
 
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
-        <yousee.bitrepository.ingester>yousee-bitrepository-ingester</yousee.bitrepository.ingester>
-        <yousee.digitv.ingester>yousee-digitv-ingester</yousee.digitv.ingester>
+        <vhsingest.bitrepository.ingester>yousee-bitrepository-ingester</vhsingest.bitrepository.ingester>
+        <vhsingest.digitv.ingester>yousee-digitv-ingester</vhsingest.digitv.ingester>
         <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
         <crosscheck.profile.validator>crosscheck-profile-validator</crosscheck.profile.validator>
         <profile.validator>profile-validator</profile.validator>
-        <yousee.doms.ingester>yousee-doms-ingester</yousee.doms.ingester>
+        <vhsingest.doms.ingester>yousee-doms-ingester</vhsingest.doms.ingester>
         <crosscheck.characteriser>crosscheck-characteriser</crosscheck.characteriser>
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
         <master.validator>master-validator</master.validator>
-        <yousee.ingest.workflow>yousee-ingest-workflow</yousee.ingest.workflow>
-        <yousee.ingest.workflow.completed>${yousee.ingest.workflow}-completed</yousee.ingest.workflow.completed>
+        <vhsingest.ingest.workflow>yousee-ingest-workflow</vhsingest.ingest.workflow>
+        <vhsingest.ingest.workflow.completed>${vhsingest.ingest.workflow}-completed</vhsingest.ingest.workflow.completed>
         <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -59,7 +59,7 @@
         <!--Yousee Doms Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
-            <artifactId>${yousee.doms.ingester}</artifactId>
+            <artifactId>${vhsingest.doms.ingester}</artifactId>
             <version>0.1.1</version>
             <classifier>bundle</classifier>
             <type>zip</type>

@@ -8,8 +8,8 @@ if [ -r setenv.sh ]; then
 fi
 
 
-if [ -z "$YOUSEE_HOME" ]; then
-   echo "YOUSEE_HOME is not set. Must be set before execution. Exiting"
+if [ -z "$VHSINGEST_HOME" ]; then
+   echo "VHSINGEST_HOME is not set. Must be set before execution. Exiting"
    exit 1
 fi
 
@@ -24,8 +24,8 @@ if [ -z "$JAVA_HOME" ]; then
    exit 1
 fi
 
-if [ -z "$YOUSEE_WORKFLOW_CONFIG" ]; then
-   echo "YOUSEE_WORKFLOW_CONFIG is not set. Must be set before execution. Exiting"
+if [ -z "$VHSINGEST_WORKFLOW_CONFIG" ]; then
+   echo "VHSINGEST_WORKFLOW_CONFIG is not set. Must be set before execution. Exiting"
    exit 1
 fi
 
@@ -37,7 +37,7 @@ echo $JAVA_HOME
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
 -inputvalue mpgfile "$1"  \
-"$YOUSEE_WORKFLOWS/vhsingest.t2flow"
+"$VHSINGEST_WORKFLOWS/vhsingest.t2flow"
 
 exit 0
 

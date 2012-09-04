@@ -10,7 +10,7 @@
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.workflow.dependencies}</outputDirectory>
+            <outputDirectory>${vhsingest.workflow.dependencies}</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <useTransitiveFiltering>true</useTransitiveFiltering>
@@ -22,7 +22,7 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
@@ -34,7 +34,7 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
@@ -47,7 +47,7 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.components.dir}/${profile.validator}/bin</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}/${profile.validator}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
@@ -59,33 +59,33 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/external-products</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}/${vhsingest.doms.ingester}/external-products</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <excludes>
-                    <exclude>${yousee.doms.ingester}-*.jar</exclude>
+                    <exclude>${vhsingest.doms.ingester}-*.jar</exclude>
                 </excludes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${yousee.doms.ingester}</include>
+                <include>${medieplatform}:${vhsingest.doms.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${yousee.components.dir}/${yousee.doms.ingester}/bin</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}/${vhsingest.doms.ingester}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <includes>
-                    <include>${yousee.doms.ingester}-*.jar</include>
+                    <include>${vhsingest.doms.ingester}-*.jar</include>
                 </includes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${yousee.doms.ingester}</include>
+                <include>${medieplatform}:${vhsingest.doms.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
@@ -96,7 +96,7 @@
     <fileSets>
 
         <fileSet>
-            <outputDirectory>${yousee.bin}</outputDirectory>
+            <outputDirectory>${vhsingest.bin}</outputDirectory>
             <directory>src/main/bin</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
@@ -110,7 +110,7 @@
         </fileSet>
 
         <fileSet>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
@@ -118,7 +118,7 @@
         </fileSet>
 
         <fileSet>
-            <outputDirectory>${yousee.components.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
@@ -127,7 +127,7 @@
 
 
         <fileSet>
-            <outputDirectory>${yousee.workflow.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.workflow.dir}</outputDirectory>
             <directoryMode>0744</directoryMode>
             <directory>src/main/taverna</directory>
             <filtered>true</filtered>
@@ -143,7 +143,7 @@
     <files>
         <file>
             <source>src/main/scripts/bitstorage.ingest.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${bitstorage.ingest}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
@@ -151,42 +151,42 @@
 
         <file>
             <source>src/main/scripts/crosscheck.characteriser.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${crosscheck.characteriser}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/crosscheck.profile.validator.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${crosscheck.profile.validator}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.characteriser.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${ffprobe.characteriser}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.profile.validator.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${ffprobe.profile.validator}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
-            <source>src/main/scripts/yousee.doms.ingester.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
-            <destName>${yousee.doms.ingester}.sh</destName>
+            <source>src/main/scripts/vhsingest.doms.ingester.sh</source>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
+            <destName>${vhsingest.doms.ingester}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/master.validator.sh</source>
-            <outputDirectory>${yousee.script.dir}</outputDirectory>
+            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${master.validator}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
