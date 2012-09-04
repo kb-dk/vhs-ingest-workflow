@@ -1,7 +1,7 @@
 export TAVERNA_HOME="/home/yousee/taverna/taverna-workbench-2.4.0/"
 export JAVA_HOME="/usr/java/jdk1.6.0_32"
 
-export YOUSEE_HOME="$SCRIPT_PATH/.."
+#export YOUSEE_HOME="$SCRIPT_PATH/.."
 #export YOUSEE_CONFIG="${yousee.config}"
 export YOUSEE_LOGS="${yousee.home}/${yousee.logs}"
 export YOUSEE_LOCKS="${yousee.home}/${yousee.locks}"

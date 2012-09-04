@@ -1,17 +1,10 @@
 #!/bin/bash
 
-pushd . > /dev/null
-SCRIPT_PATH="${BASH_SOURCE[0]}";
-if ([ -h "${SCRIPT_PATH}" ]) then
-  while([ -h "${SCRIPT_PATH}" ]) do cd `dirname "$SCRIPT_PATH"`; SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
-fi
-cd `dirname ${SCRIPT_PATH}` > /dev/null
-SCRIPT_PATH=`pwd`;
-popd  > /dev/null
+WD=$(pwd)
+cd $(dirname $(readlink -f $0))
 
-
-if [ -r $SCRIPT_PATH/setenv.sh ]; then
-    source $SCRIPT_PATH/setenv.sh
+if [ -r setenv.sh ]; then
+    source setenv.sh
 fi
 
 
@@ -37,7 +30,7 @@ if [ -z "$YOUSEE_WORKFLOW_CONFIG" ]; then
 fi
 
 
-
+cd $WD
 mkdir -p $YOUSEE_LOGS
 mkdir -p $YOUSEE_LOCKS
 echo $JAVA_HOME
