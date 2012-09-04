@@ -9,7 +9,7 @@
     <usecaseid />
     <description />
     <command>#/home/ktc/test/testworkflow/scripts/runffprobe.sh %%mpegfile%%
-$YOUSEE_SCRIPTS/${ffprobe.characteriser}.sh `basename "%%mpegfile%%"` "%%mpegfile%%"</command>
+$VHSINGEST_SCRIPTS/${ffprobe.characteriser}.sh `basename "%%mpegfile%%"` "%%mpegfile%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
     <tags>
@@ -62,7 +62,7 @@ $YOUSEE_SCRIPTS/${ffprobe.characteriser}.sh `basename "%%mpegfile%%"` "%%mpegfil
     <usecaseid />
     <description />
     <command>#/home/ktc/test/testworkflow/scripts/runcrosscheck.sh %%mpegfile%%
-$YOUSEE_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%mpegfile%%"</command>
+$VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%mpegfile%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
     <tags>
@@ -114,7 +114,7 @@ $YOUSEE_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%mpeg
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>$YOUSEE_SCRIPTS/${ffprobe.profile.validator}.sh "%%filename%%" "ffprobein" "%%channelID%%"</command>
+    <command>$VHSINGEST_SCRIPTS/${ffprobe.profile.validator}.sh "%%filename%%" "ffprobein" "%%channelID%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
     <tags>
@@ -195,7 +195,7 @@ $YOUSEE_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%mpeg
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>$YOUSEE_SCRIPTS/${bitstorage.ingest}.sh `basename "%%mpegfilein%%"` "%%mpegfilein%%" "%%checksum%%"
+    <command>$VHSINGEST_SCRIPTS/${bitstorage.ingest}.sh `basename "%%mpegfilein%%"` "%%mpegfilein%%" "%%checksum%%"
 </command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
@@ -263,7 +263,7 @@ $YOUSEE_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%mpeg
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>$YOUSEE_SCRIPTS/${vhsingest.doms.ingester}.sh "%%filename%%" "%%remoteURL%%" "%%checksum%%" "ffprobeinput" "crosscheckinput" "vhsMetadata"
+    <command>$VHSINGEST_SCRIPTS/${vhsingest.doms.ingester}.sh "%%filename%%" "%%remoteURL%%" "%%checksum%%" "ffprobeinput" "crosscheckinput" "vhsMetadata"
 
 #/home/ktc/test/testworkflow/scripts/domsvhsfilecreator.sh "crosscheckinput" "ffprobeinput" "% %fileurl%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
@@ -470,7 +470,7 @@ bitRepoUrl = obj.get("UrlToFile").toString();
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>$YOUSEE_SCRIPTS/${crosscheck.profile.validator}.sh "%%filename%%" "crosscheckin" "%%channelID%%"</command>
+    <command>$VHSINGEST_SCRIPTS/${crosscheck.profile.validator}.sh "%%filename%%" "crosscheckin" "%%channelID%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
     <tags>

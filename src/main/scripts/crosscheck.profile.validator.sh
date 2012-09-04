@@ -11,7 +11,7 @@ NAME=`basename $0 .sh`
 
 source env.sh
 
-APPDIR="$YOUSEE_COMPONENTS/${profile.validator}/"
+APPDIR="$VHSINGEST_COMPONENTS/${profile.validator}/"
 
 #CMD="$APPDIR/bin/validateXmlWithProfile.sh $WD/$XML $CONFIGFILE"
 

@@ -10,7 +10,7 @@ NAME=`basename $0 .sh`
 
 source env.sh
 
-APPDIR="$YOUSEE_COMPONENTS/${crosscheck.characteriser}"
+APPDIR="$VHSINGEST_COMPONENTS/${crosscheck.characteriser}"
 
 #CMD="$APPDIR/bin/crosscheckCharacterise.sh $LOCALFILE $CONFIGFILE"
 #CMD="cat $VHSINGEST_HOME/examples/crossCheck_output.xml"

@@ -10,7 +10,7 @@ NAME=`basename $0 .sh`
 
 source env.sh
 
-CMD="$YOUSEE_COMPONENTS/${bitstorage.ingest}/bin/${bitstorage.ingest}.sh $LOCALFILE $CONFIGFILE"
+CMD="$VHSINGEST_COMPONENTS/${bitstorage.ingest}/bin/${bitstorage.ingest}.sh $LOCALFILE $CONFIGFILE"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?

@@ -16,4 +16,4 @@ fi
 VERSION=`head -1 $TAVERNA_HOME/release-notes.txt | sed 's/.$//' | cut -d' ' -f4`
 LIB="$HOME/.taverna-$VERSION/lib/"
 mkdir -p $LIB
-cp -u $YOUSEE_DEPENDENCIES/*.jar $LIB
+cp -u $VHSINGEST_DEPENDENCIES/*.jar $LIB

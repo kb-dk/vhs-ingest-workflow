@@ -31,8 +31,8 @@ fi
 
 
 cd $WD
-mkdir -p $YOUSEE_LOGS
-mkdir -p $YOUSEE_LOCKS
+mkdir -p $VHSINGEST_LOGS
+mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
