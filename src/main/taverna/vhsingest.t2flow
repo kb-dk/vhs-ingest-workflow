@@ -1,4 +1,4 @@
-<workflow xmlns="http://taverna.sf.net/2008/xml/t2flow" version="1" producedBy="taverna-2.4.0"><dataflow id="405e4a58-0488-4746-9c62-aea91e70a7c9" role="top"><name>Workflow1</name><inputPorts><port><name>mpgfile</name><depth>0</depth><granularDepth>0</granularDepth><annotations /></port></inputPorts><outputPorts><port><name>objectUUID</name><annotations /></port></outputPorts><processors><processor><name>ffprobe</name><inputPorts><port><name>mpegfile</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="mpegfile" to="mpegfile" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
+<workflow xmlns="http://taverna.sf.net/2008/xml/t2flow" version="1" producedBy="taverna-2.4.0"><dataflow id="1941002c-eed1-4b8f-9747-c8b737b8119c" role="top"><name>Workflow1</name><inputPorts><port><name>mpgfile</name><depth>0</depth><granularDepth>0</granularDepth><annotations /></port></inputPorts><outputPorts><port><name>objectUUID</name><annotations /></port></outputPorts><processors><processor><name>ffprobe</name><inputPorts><port><name>mpegfile</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="mpegfile" to="mpegfile" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
   <mechanismType>789663B8-DA91-428A-9F7D-B3F3DA185FD4</mechanismType>
   <mechanismName>default local</mechanismName>
   <mechanismXML>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xD;
@@ -104,7 +104,7 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpegfile" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>ffprobe_validator</name><inputPorts><port><name>ffprobein</name><depth>0</depth></port><port><name>channelID</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="channelID" to="channelID" /><map from="ffprobein" to="ffprobein" /><map from="filename" to="filename" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpegfile" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>ffprobe_validator</name><inputPorts><port><name>ffprobein</name><depth>0</depth></port><port><name>channelID</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="channelID" to="channelID" /><map from="filename" to="filename" /><map from="ffprobein" to="ffprobein" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
   <mechanismType>789663B8-DA91-428A-9F7D-B3F3DA185FD4</mechanismType>
   <mechanismName>default local</mechanismName>
   <mechanismXML>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xD;
@@ -141,10 +141,10 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
         </de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
       </entry>
       <entry>
-        <string>filename</string>
+        <string>ffprobein</string>
         <de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
-          <tag>filename</tag>
-          <file>false</file>
+          <tag>ffprobein</tag>
+          <file>true</file>
           <tempFile>false</tempFile>
           <binary>false</binary>
           <charsetName>UTF-8</charsetName>
@@ -155,10 +155,10 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
         </de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
       </entry>
       <entry>
-        <string>ffprobein</string>
+        <string>filename</string>
         <de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
-          <tag>ffprobein</tag>
-          <file>true</file>
+          <tag>filename</tag>
+          <file>false</file>
           <tempFile>false</tempFile>
           <binary>false</binary>
           <charsetName>UTF-8</charsetName>
@@ -253,7 +253,7 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpegfilein" depth="0" /><port name="checksum" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>domsfileobjectcreator</name><inputPorts><port><name>crosscheckinput</name><depth>0</depth></port><port><name>ffprobeinput</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port><port><name>remoteURL</name><depth>0</depth></port><port><name>checksum</name><depth>0</depth></port><port><name>vhsMetadata</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="remoteURL" to="remoteURL" /><map from="vhsMetadata" to="vhsMetadata" /><map from="ffprobeinput" to="ffprobeinput" /><map from="filename" to="filename" /><map from="crosscheckinput" to="crosscheckinput" /><map from="checksum" to="checksum" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpegfilein" depth="0" /><port name="checksum" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>domsfileobjectcreator</name><inputPorts><port><name>crosscheckinput</name><depth>0</depth></port><port><name>ffprobeinput</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port><port><name>remoteURL</name><depth>0</depth></port><port><name>checksum</name><depth>0</depth></port><port><name>vhsMetadata</name><depth>0</depth></port></inputPorts><outputPorts><port><name>STDOUT</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>external-tool-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.externaltool.ExternalToolActivity</class><inputMap><map from="remoteURL" to="remoteURL" /><map from="vhsMetadata" to="vhsMetadata" /><map from="ffprobeinput" to="ffprobeinput" /><map from="crosscheckinput" to="crosscheckinput" /><map from="filename" to="filename" /><map from="checksum" to="checksum" /></inputMap><outputMap><map from="STDOUT" to="STDOUT" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.externaltool.ExternalToolActivityConfigurationBean xmlns="">
   <mechanismType>789663B8-DA91-428A-9F7D-B3F3DA185FD4</mechanismType>
   <mechanismName>default local</mechanismName>
   <mechanismXML>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#xD;
@@ -321,10 +321,10 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
         </de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
       </entry>
       <entry>
-        <string>crosscheckinput</string>
+        <string>filename</string>
         <de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
-          <tag>crosscheckinput</tag>
-          <file>true</file>
+          <tag>filename</tag>
+          <file>false</file>
           <tempFile>false</tempFile>
           <binary>false</binary>
           <charsetName>UTF-8</charsetName>
@@ -335,10 +335,10 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
         </de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
       </entry>
       <entry>
-        <string>filename</string>
+        <string>crosscheckinput</string>
         <de.uni__luebeck.inb.knowarc.usecases.ScriptInputUser>
-          <tag>filename</tag>
-          <file>false</file>
+          <tag>crosscheckinput</tag>
+          <file>true</file>
           <tempFile>false</tempFile>
           <binary>false</binary>
           <charsetName>UTF-8</charsetName>
@@ -379,7 +379,7 @@ $VHSINGEST_SCRIPTS/${crosscheck.characteriser}.sh `basename "%%mpegfile%%"` "%%m
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="crosscheckinput" depth="0" /><port name="ffprobeinput" depth="0" /><port name="filename" depth="0" /><port name="remoteURL" depth="0" /><port name="checksum" depth="0" /><port name="vhsMetadata" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>Waiter</name><inputPorts><port><name>passThru</name><depth>0</depth></port><port><name>wait</name><depth>0</depth></port></inputPorts><outputPorts><port><name>passed</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="passThru" to="passThru" /><map from="wait" to="wait" /></inputMap><outputMap><map from="passed" to="passed" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="crosscheckinput" depth="0" /><port name="ffprobeinput" depth="0" /><port name="filename" depth="0" /><port name="remoteURL" depth="0" /><port name="checksum" depth="0" /><port name="vhsMetadata" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>Waiter</name><inputPorts><port><name>passThru</name><depth>0</depth></port><port><name>wait</name><depth>0</depth></port></inputPorts><outputPorts><port><name>passed</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="wait" to="wait" /><map from="passThru" to="passThru" /></inputMap><outputMap><map from="passed" to="passed" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
   <inputs>
     <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
       <name>wait</name>
@@ -603,7 +603,7 @@ if (ffprobeValid &amp;&amp; ccValid){
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="crosscheckResult" depth="0" /><port name="ffprobeResult" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>getMetadata</name><inputPorts><port><name>mpgfile</name><depth>0</depth></port></inputPorts><outputPorts><port><name>channelID</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>filename</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>endTime</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>startTime</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="mpgfile" to="mpgfile" /></inputMap><outputMap><map from="startTime" to="startTime" /><map from="channelID" to="channelID" /><map from="filename" to="filename" /><map from="endTime" to="endTime" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="crosscheckResult" depth="0" /><port name="ffprobeResult" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>getMetadata</name><inputPorts><port><name>mpgfile</name><depth>0</depth></port></inputPorts><outputPorts><port><name>channelID</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>filename</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>endTime</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>startTime</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>formaturi</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>duration</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>quality</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>recorder</name><depth>0</depth><granularDepth>0</granularDepth></port><port><name>vhslabel</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="mpgfile" to="mpgfile" /></inputMap><outputMap><map from="startTime" to="startTime" /><map from="vhslabel" to="vhslabel" /><map from="duration" to="duration" /><map from="recorder" to="recorder" /><map from="channelID" to="channelID" /><map from="quality" to="quality" /><map from="filename" to="filename" /><map from="endTime" to="endTime" /><map from="formaturi" to="formaturi" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
   <inputs>
     <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
       <name>mpgfile</name>
@@ -641,14 +641,49 @@ if (ffprobeValid &amp;&amp; ccValid){
       <mimeTypes />
       <granularDepth>0</granularDepth>
     </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+      <name>formaturi</name>
+      <depth>0</depth>
+      <mimeTypes />
+      <granularDepth>0</granularDepth>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+      <name>vhslabel</name>
+      <depth>0</depth>
+      <mimeTypes />
+      <granularDepth>0</granularDepth>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+      <name>recorder</name>
+      <depth>0</depth>
+      <mimeTypes />
+      <granularDepth>0</granularDepth>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+      <name>quality</name>
+      <depth>0</depth>
+      <mimeTypes />
+      <granularDepth>0</granularDepth>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
+      <name>duration</name>
+      <depth>0</depth>
+      <mimeTypes />
+      <granularDepth>0</granularDepth>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
   </outputs>
   <classLoaderSharing>workflow</classLoaderSharing>
   <localDependencies />
   <artifactDependencies />
   <script>channelID="tv3";
 filename = mpgfile.substring(mpgfile.lastIndexOf("/")+1);
-startTime="29/6/2006";
-endTime="30/6/2006";</script>
+startTime="2006-06-29T22:05:56";
+endTime="2006-06-30T03:49:45";
+formaturi="info:pronom/x-fmt/386";
+vhslabel="tv3 2006 29/6 - 30/6";
+recorder="digibox1";
+quality="3";
+duration="02:14:03";</script>
   <dependencies />
 </net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
   <maxJobs>1</maxJobs>
@@ -667,7 +702,7 @@ endTime="30/6/2006";</script>
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>md5sum %%mpgfile%%</command>
+    <command>md5sum %%mpgfile%% | cut -d' ' -f1</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>
     <executionTimeoutInSeconds>1800</executionTimeoutInSeconds>
     <tags>
@@ -709,7 +744,7 @@ endTime="30/6/2006";</script>
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpgfile" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>packageMetadataForDoms</name><inputPorts><port><name>checksum</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port><port><name>SBchannelID</name><depth>0</depth></port><port><name>endTime</name><depth>0</depth></port><port><name>startTime</name><depth>0</depth></port></inputPorts><outputPorts><port><name>domsMetadata</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="startTime" to="startTime" /><map from="SBchannelID" to="SBchannelID" /><map from="filename" to="filename" /><map from="checksum" to="checksum" /><map from="endTime" to="endTime" /></inputMap><outputMap><map from="domsMetadata" to="domsMetadata" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="mpgfile" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor><processor><name>packageMetadataForDoms</name><inputPorts><port><name>checksum</name><depth>0</depth></port><port><name>filename</name><depth>0</depth></port><port><name>SBchannelID</name><depth>0</depth></port><port><name>endTime</name><depth>0</depth></port><port><name>startTime</name><depth>0</depth></port><port><name>formaturi</name><depth>0</depth></port><port><name>duration</name><depth>0</depth></port><port><name>quality</name><depth>0</depth></port><port><name>recorder</name><depth>0</depth></port><port><name>vhslabel</name><depth>0</depth></port></inputPorts><outputPorts><port><name>domsMetadata</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="startTime" to="startTime" /><map from="vhslabel" to="vhslabel" /><map from="duration" to="duration" /><map from="SBchannelID" to="SBchannelID" /><map from="recorder" to="recorder" /><map from="quality" to="quality" /><map from="filename" to="filename" /><map from="checksum" to="checksum" /><map from="endTime" to="endTime" /><map from="formaturi" to="formaturi" /></inputMap><outputMap><map from="domsMetadata" to="domsMetadata" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
   <inputs>
     <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
       <name>SBchannelID</name>
@@ -761,6 +796,56 @@ endTime="30/6/2006";</script>
       <translatedElementType>java.lang.String</translatedElementType>
       <allowsLiteralValues>true</allowsLiteralValues>
     </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+      <name>formaturi</name>
+      <depth>0</depth>
+      <mimeTypes>
+        <string>text/plain</string>
+      </mimeTypes>
+      <handledReferenceSchemes />
+      <translatedElementType>java.lang.String</translatedElementType>
+      <allowsLiteralValues>true</allowsLiteralValues>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+      <name>vhslabel</name>
+      <depth>0</depth>
+      <mimeTypes>
+        <string>text/plain</string>
+      </mimeTypes>
+      <handledReferenceSchemes />
+      <translatedElementType>java.lang.String</translatedElementType>
+      <allowsLiteralValues>true</allowsLiteralValues>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+      <name>recorder</name>
+      <depth>0</depth>
+      <mimeTypes>
+        <string>text/plain</string>
+      </mimeTypes>
+      <handledReferenceSchemes />
+      <translatedElementType>java.lang.String</translatedElementType>
+      <allowsLiteralValues>true</allowsLiteralValues>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+      <name>duration</name>
+      <depth>0</depth>
+      <mimeTypes>
+        <string>text/plain</string>
+      </mimeTypes>
+      <handledReferenceSchemes />
+      <translatedElementType>java.lang.String</translatedElementType>
+      <allowsLiteralValues>true</allowsLiteralValues>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+    <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
+      <name>quality</name>
+      <depth>0</depth>
+      <mimeTypes>
+        <string>text/plain</string>
+      </mimeTypes>
+      <handledReferenceSchemes />
+      <translatedElementType>java.lang.String</translatedElementType>
+      <allowsLiteralValues>true</allowsLiteralValues>
+    </net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
   </inputs>
   <outputs>
     <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityOutputPortDefinitionBean>
@@ -773,89 +858,96 @@ endTime="30/6/2006";</script>
   <classLoaderSharing>workflow</classLoaderSharing>
   <localDependencies />
   <artifactDependencies />
-  <script>String makeEnd(String startTag){
-        String endTemp = startTag.trim().replaceAll("^&lt;(\\w)", "&lt;/$1");
-        if (endTemp.indexOf(" ") &gt; 0){
-
-            endTemp = endTemp.substring(0,endTemp.indexOf(" "))+"&gt;";
-        }
-        return endTemp;
-    }
-
-
-        String startTag =
-                "&lt;BroadcastFileDescriptiveMetadata xmlns=\"http://doms.statsbiblioteket.dk/types/broadcastMetadata/0/1/#\"&gt;";
-        String endTag = "\n"+makeEnd(startTag);
-
-        String channelIDsStartTag = "\n    &lt;channelIDs&gt;";
-        String channelIDsEndTag = makeEnd(channelIDsStartTag);
+  <script>/** Make an end tag that corresponds to the input start tag  */ 
+String makeEnd(String startTag) {
+	String endTemp = startTag.trim().replaceAll("^&lt;(\\w)", "&lt;/$1");
+	if (endTemp.indexOf(" ") &gt; 0) {
+		endTemp = endTemp.substring(0, endTemp.indexOf(" ")) + "&gt;";
+	}
+	return endTemp;
+}
 
 
-        String channelIDStartTag = "\n    &lt;channelID&gt;";
-        String channelIDEndTag = makeEnd(channelIDStartTag);
+String startTag = "&lt;VHSFileMetadata xmlns=\"http://doms.statsbiblioteket.dk/types/vhs_metadata/0/1/#\"&gt;";
+String endTag = "\n" + makeEnd(startTag);
+
+String filenameStartTag = "\n    &lt;filename&gt;";
+String filenameEndTag = makeEnd(filenameStartTag);
+
+String checksumStartTag = "\n    &lt;checksum&gt;";
+String checksumEndTag = makeEnd(checksumStartTag);
+
+String recorderStartTag = "\n    &lt;recorder&gt;";
+String recorderEndTag = makeEnd(recorderStartTag);
+
+String vhsLabelStartTag = "\n    &lt;vhs_label&gt;";
+String vhsLabelEndTag = makeEnd(vhsLabelStartTag);
+
+String channelIDStartTag = "\n    &lt;channel_id&gt;";
+String channelIDEndTag = makeEnd(channelIDStartTag);
+
+String vhsStartTimeStartTag = "\n    &lt;vhs_start_time&gt;";
+String vhsStartTimeEndTag = makeEnd(vhsStartTimeStartTag);
+
+String vhsStopTimeStartTag = "\n    &lt;vhs_stop_time&gt;";
+String vhsStopTimeEndTag = makeEnd(vhsStopTimeStartTag);
+
+String formatURIStartTag = "\n    &lt;format_uri&gt;";
+String formatURIEndTag = makeEnd(formatURIStartTag);
+
+String qualityStartTag = "\n    &lt;quality&gt;";
+String qualityEndTag = makeEnd(qualityStartTag);
+
+String recordedDurationStartTag = "\n    &lt;recorded_duration&gt;";
+String recordedDurationEndTag = makeEnd(recordedDurationStartTag);
 
 
-        String formatStartTag = "\n    &lt;format&gt;";
-        String formatEndTag = makeEnd(formatStartTag);
+StringBuilder builder = new StringBuilder(); builder.append(startTag);
 
-        String startStartTag = "\n    &lt;startTimeDate&gt;";
-        String startEndTag = makeEnd(startStartTag);
+builder.append(filenameStartTag);
+builder.append(filename);
+builder.append(filenameEndTag);
 
-        String endStartTag = "\n    &lt;endTimeDate&gt;";
-        String endEndTag = makeEnd(endStartTag);
+builder.append(checksumStartTag);
+builder.append(checksum);
+builder.append(checksumEndTag);
 
-        String recorderStartTag = "\n    &lt;recorder&gt;";
-        String recorderEndTag = makeEnd(recorderStartTag);
+builder.append(recorderStartTag);
+builder.append(recorder);
+builder.append(recorderEndTag);
 
-        String filenameStartTag = "\n    &lt;filename&gt;";
-        String filenameEndTag = makeEnd(filenameStartTag);
+builder.append(vhsLabelStartTag);
+builder.append(vhslabel);
+builder.append(vhsLabelEndTag);
 
-        String checksumStartTag = "\n    &lt;checksum&gt;";
-        String checksumEndTag = makeEnd(checksumStartTag);
+builder.append(channelIDStartTag);
+builder.append(SBchannelID);
+builder.append(channelIDEndTag);
 
+builder.append(vhsStartTimeStartTag);
+builder.append(startTime);
+builder.append(vhsStartTimeEndTag);
 
-        StringBuilder builder = new StringBuilder();
-        builder.append(startTag);
+builder.append(vhsStopTimeStartTag);
+builder.append(endTime);
+builder.append(vhsStopTimeEndTag);
 
-        builder.append(channelIDsStartTag);
-        builder.append(channelIDStartTag);
-        builder.append(SBchannelID);
-        builder.append(channelIDEndTag);
-        builder.append(channelIDsEndTag);
+builder.append(formatURIStartTag);
+builder.append(formaturi);
+builder.append(formatURIEndTag);
 
-        builder.append(formatStartTag);
-        builder.append("mpegts");
-        builder.append(formatEndTag);
+builder.append(qualityStartTag);
+builder.append(quality);
+builder.append(qualityEndTag);
 
+builder.append(recordedDurationStartTag);
+builder.append(duration);
+builder.append(recordedDurationEndTag);
 
-        builder.append(startStartTag);
-        builder.append(startTime);
-        builder.append(startEndTag);
+builder.append(endTag);
 
+domsMetadata = builder.toString(); 
 
-
-        builder.append(endStartTag);
-        builder.append(endTime);
-        builder.append(endEndTag);
-
-
-        builder.append(filenameStartTag);
-        builder.append(filename);
-        builder.append(filenameEndTag);
-
-        builder.append(checksumStartTag);
-        builder.append(checksum);
-        builder.append(checksumEndTag);
-
-
-        builder.append(recorderStartTag);
-        builder.append("yousee");
-        builder.append(recorderEndTag);
-
-
-        builder.append(endTag);
-
-domsMetadata = builder.toString();
 </script>
   <dependencies />
 </net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean></configBean><annotations /></activity></activities><dispatchStack><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Parallelize</class><configBean encoding="xstream"><net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.ParallelizeConfig xmlns="">
@@ -865,7 +957,7 @@ domsMetadata = builder.toString();
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><dot><port name="checksum" depth="0" /><port name="filename" depth="0" /><port name="SBchannelID" depth="0" /><port name="endTime" depth="0" /><port name="startTime" depth="0" /></dot></strategy></iteration></iterationStrategyStack></processor><processor><name>parseDomsOutput</name><inputPorts><port><name>domsOutput</name><depth>0</depth></port></inputPorts><outputPorts><port><name>domsPid</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="domsOutput" to="domsOutput" /></inputMap><outputMap><map from="domsPid" to="domsPid" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><dot><port name="checksum" depth="0" /><port name="filename" depth="0" /><port name="SBchannelID" depth="0" /><port name="endTime" depth="0" /><port name="startTime" depth="0" /><port name="formaturi" depth="0" /><port name="duration" depth="0" /><port name="quality" depth="0" /><port name="recorder" depth="0" /><port name="vhslabel" depth="0" /></dot></strategy></iteration></iterationStrategyStack></processor><processor><name>parseDomsOutput</name><inputPorts><port><name>domsOutput</name><depth>0</depth></port></inputPorts><outputPorts><port><name>domsPid</name><depth>0</depth><granularDepth>0</granularDepth></port></outputPorts><annotations /><activities><activity><raven><group>net.sf.taverna.t2.activities</group><artifact>beanshell-activity</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.activities.beanshell.BeanshellActivity</class><inputMap><map from="domsOutput" to="domsOutput" /></inputMap><outputMap><map from="domsPid" to="domsPid" /></outputMap><configBean encoding="xstream"><net.sf.taverna.t2.activities.beanshell.BeanshellActivityConfigurationBean xmlns="">
   <inputs>
     <net.sf.taverna.t2.workflowmodel.processor.activity.config.ActivityInputPortDefinitionBean>
       <name>domsOutput</name>
@@ -903,123 +995,13 @@ domsPid = obj.get("domsPid").toString();
   <initialDelay>1000</initialDelay>
   <maxDelay>5000</maxDelay>
   <maxRetries>0</maxRetries>
-</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="domsOutput" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor></processors><conditions /><datalinks><datalink><sink type="processor"><processor>ffprobe</processor><port>mpegfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>crosscheck</processor><port>mpegfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>ffprobein</port></sink><source type="processor"><processor>ffprobe</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>channelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>bitstorageingest</processor><port>mpegfilein</port></sink><source type="processor"><processor>Waiter</processor><port>passed</port></source></datalink><datalink><sink type="processor"><processor>bitstorageingest</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>crosscheckinput</port></sink><source type="processor"><processor>crosscheck</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>ffprobeinput</port></sink><source type="processor"><processor>ffprobe</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>remoteURL</port></sink><source type="processor"><processor>parseBitRepoOutput</processor><port>bitRepoUrl</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>vhsMetadata</port></sink><source type="processor"><processor>packageMetadataForDoms</processor><port>domsMetadata</port></source></datalink><datalink><sink type="processor"><processor>Waiter</processor><port>passThru</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>Waiter</processor><port>wait</port></sink><source type="processor"><processor>combineValidation</processor><port>valid</port></source></datalink><datalink><sink type="processor"><processor>parseBitRepoOutput</processor><port>bitRepoOutput</port></sink><source type="processor"><processor>bitstorageingest</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>crosscheckin</port></sink><source type="processor"><processor>crosscheck</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>channelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>combineValidation</processor><port>crosscheckResult</port></sink><source type="processor"><processor>crosscheck_validator</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>combineValidation</processor><port>ffprobeResult</port></sink><source type="processor"><processor>ffprobe_validator</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>getMetadata</processor><port>mpgfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>checksum</processor><port>mpgfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>SBchannelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>endTime</port></sink><source type="processor"><processor>getMetadata</processor><port>endTime</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>startTime</port></sink><source type="processor"><processor>getMetadata</processor><port>startTime</port></source></datalink><datalink><sink type="processor"><processor>parseDomsOutput</processor><port>domsOutput</port></sink><source type="processor"><processor>domsfileobjectcreator</processor><port>STDOUT</port></source></datalink><datalink><sink type="dataflow"><port>objectUUID</port></sink><source type="processor"><processor>parseDomsOutput</processor><port>domsPid</port></source></datalink></datalinks><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+</net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.RetryConfig></configBean></dispatchLayer><dispatchLayer><raven><group>net.sf.taverna.t2.core</group><artifact>workflowmodel-impl</artifact><version>1.4</version></raven><class>net.sf.taverna.t2.workflowmodel.processor.dispatch.layers.Invoke</class><configBean encoding="xstream"><null xmlns="" /></configBean></dispatchLayer></dispatchStack><iterationStrategyStack><iteration><strategy><cross><port name="domsOutput" depth="0" /></cross></strategy></iteration></iterationStrategyStack></processor></processors><conditions /><datalinks><datalink><sink type="processor"><processor>ffprobe</processor><port>mpegfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>crosscheck</processor><port>mpegfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>ffprobein</port></sink><source type="processor"><processor>ffprobe</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>channelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>ffprobe_validator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>bitstorageingest</processor><port>mpegfilein</port></sink><source type="processor"><processor>Waiter</processor><port>passed</port></source></datalink><datalink><sink type="processor"><processor>bitstorageingest</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>crosscheckinput</port></sink><source type="processor"><processor>crosscheck</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>ffprobeinput</port></sink><source type="processor"><processor>ffprobe</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>remoteURL</port></sink><source type="processor"><processor>parseBitRepoOutput</processor><port>bitRepoUrl</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>domsfileobjectcreator</processor><port>vhsMetadata</port></sink><source type="processor"><processor>packageMetadataForDoms</processor><port>domsMetadata</port></source></datalink><datalink><sink type="processor"><processor>Waiter</processor><port>passThru</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>Waiter</processor><port>wait</port></sink><source type="processor"><processor>combineValidation</processor><port>valid</port></source></datalink><datalink><sink type="processor"><processor>parseBitRepoOutput</processor><port>bitRepoOutput</port></sink><source type="processor"><processor>bitstorageingest</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>crosscheckin</port></sink><source type="processor"><processor>crosscheck</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>crosscheck_validator</processor><port>channelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>combineValidation</processor><port>crosscheckResult</port></sink><source type="processor"><processor>crosscheck_validator</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>combineValidation</processor><port>ffprobeResult</port></sink><source type="processor"><processor>ffprobe_validator</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>getMetadata</processor><port>mpgfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>checksum</processor><port>mpgfile</port></sink><source type="dataflow"><port>mpgfile</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>checksum</port></sink><source type="processor"><processor>checksum</processor><port>STDOUT</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>filename</port></sink><source type="processor"><processor>getMetadata</processor><port>filename</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>SBchannelID</port></sink><source type="processor"><processor>getMetadata</processor><port>channelID</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>endTime</port></sink><source type="processor"><processor>getMetadata</processor><port>endTime</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>startTime</port></sink><source type="processor"><processor>getMetadata</processor><port>startTime</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>formaturi</port></sink><source type="processor"><processor>getMetadata</processor><port>formaturi</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>duration</port></sink><source type="processor"><processor>getMetadata</processor><port>duration</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>quality</port></sink><source type="processor"><processor>getMetadata</processor><port>quality</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>recorder</port></sink><source type="processor"><processor>getMetadata</processor><port>recorder</port></source></datalink><datalink><sink type="processor"><processor>packageMetadataForDoms</processor><port>vhslabel</port></sink><source type="processor"><processor>getMetadata</processor><port>vhslabel</port></source></datalink><datalink><sink type="processor"><processor>parseDomsOutput</processor><port>domsOutput</port></sink><source type="processor"><processor>domsfileobjectcreator</processor><port>STDOUT</port></source></datalink><datalink><sink type="dataflow"><port>objectUUID</port></sink><source type="processor"><processor>parseDomsOutput</processor><port>domsPid</port></source></datalink></datalinks><annotations><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>405e4a58-0488-4746-9c62-aea91e70a7c9</identification>
+        <identification>2b36155e-3810-4b3f-b1e4-bb22b7c3dedf</identification>
       </annotationBean>
-      <date>2012-09-04 08:16:37.882 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>0468efae-94af-4f30-8ece-ebc0be914e77</identification>
-      </annotationBean>
-      <date>2012-08-30 07:35:41.503 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>8263586c-b113-4019-add0-b5ca21fe291c</identification>
-      </annotationBean>
-      <date>2012-08-29 12:27:59.996 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>1e9720fa-ca3c-4010-8277-6346bf89e6bf</identification>
-      </annotationBean>
-      <date>2012-08-30 07:29:55.786 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>0643bb54-b7d3-4286-ad98-18d95ac82274</identification>
-      </annotationBean>
-      <date>2012-08-29 11:50:03.601 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>de77da9f-c279-437d-ad98-0e632effe014</identification>
-      </annotationBean>
-      <date>2012-08-29 11:50:53.674 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>322fced9-3b8d-4d7c-aa19-f22d53f26a52</identification>
-      </annotationBean>
-      <date>2012-08-30 07:28:09.74 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>d413f69a-4d0a-4452-a0d9-575a5dc3071f</identification>
-      </annotationBean>
-      <date>2012-08-30 07:40:21.237 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>d63c4946-9dbe-4633-bf5b-8cab016d33d6</identification>
-      </annotationBean>
-      <date>2012-08-30 07:36:40.487 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>b06031d0-2b74-4c58-8e2c-ca54506d9bcc</identification>
-      </annotationBean>
-      <date>2012-08-29 12:28:42.548 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>90eeac4b-e21e-4194-a722-0d8fc72ccb49</identification>
-      </annotationBean>
-      <date>2012-08-30 08:40:24.789 UTC</date>
+      <date>2012-08-30 08:58:30.678 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1039,9 +1021,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>163e3219-fdd5-462f-ab63-a6d306dbd8a3</identification>
+        <identification>fca5fe5b-e4c2-4932-8431-93fca9a6121b</identification>
       </annotationBean>
-      <date>2012-08-30 09:29:45.681 UTC</date>
+      <date>2012-08-30 08:20:59.877 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1050,9 +1032,53 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>83ba9759-76ca-4e79-9f6d-b343beb3f529</identification>
+        <identification>eaec62f8-71ce-4d0a-a273-fdac7f781886</identification>
       </annotationBean>
-      <date>2012-08-30 09:05:58.988 UTC</date>
+      <date>2012-08-30 09:24:11.936 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>b32e1e0c-13a7-4758-9a2c-3caee5750985</identification>
+      </annotationBean>
+      <date>2012-08-30 09:26:47.855 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>d413f69a-4d0a-4452-a0d9-575a5dc3071f</identification>
+      </annotationBean>
+      <date>2012-08-30 07:40:21.237 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>405e4a58-0488-4746-9c62-aea91e70a7c9</identification>
+      </annotationBean>
+      <date>2012-09-04 08:16:37.882 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>79c17787-cc92-4ccb-8a84-ebf90f11c7ee</identification>
+      </annotationBean>
+      <date>2012-08-29 08:52:19.555 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1072,9 +1098,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>d6a1a73c-b522-4f19-86ba-8334451a1920</identification>
+        <identification>18b5206d-5153-4871-bb5c-8d78bb0d6863</identification>
       </annotationBean>
-      <date>2012-08-29 13:02:13.717 UTC</date>
+      <date>2012-08-30 07:38:27.622 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1094,6 +1120,50 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>8263586c-b113-4019-add0-b5ca21fe291c</identification>
+      </annotationBean>
+      <date>2012-08-29 12:27:59.996 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>499060b8-03d2-4ecc-9e70-4340421fc7b9</identification>
+      </annotationBean>
+      <date>2012-09-04 10:37:23.214 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>d63c4946-9dbe-4633-bf5b-8cab016d33d6</identification>
+      </annotationBean>
+      <date>2012-08-30 07:36:40.487 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>62ffcaf8-ac9e-4306-b124-22020826fd67</identification>
+      </annotationBean>
+      <date>2012-08-30 08:06:24.715 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
         <identification>494dfc01-17b4-4100-9f0b-92bf1dea5a5b</identification>
       </annotationBean>
       <date>2012-08-29 11:45:41.44 UTC</date>
@@ -1105,9 +1175,20 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>fca5fe5b-e4c2-4932-8431-93fca9a6121b</identification>
+        <identification>322fced9-3b8d-4d7c-aa19-f22d53f26a52</identification>
       </annotationBean>
-      <date>2012-08-30 08:20:59.877 UTC</date>
+      <date>2012-08-30 07:28:09.74 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>1941002c-eed1-4b8f-9747-c8b737b8119c</identification>
+      </annotationBean>
+      <date>2012-09-04 11:32:37.113 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1138,119 +1219,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>d3f4fc20-7339-48e5-919a-7c267d91d396</identification>
+        <identification>89fc615f-8639-4c2a-acfc-4b36827a93ea</identification>
       </annotationBean>
-      <date>2012-08-30 08:44:39.408 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>556b40fa-568d-47a4-a82f-1d5f54e8dcac</identification>
-      </annotationBean>
-      <date>2012-08-30 08:50:39.473 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>3d792fb0-3d4b-4f84-a207-1a025e826a7f</identification>
-      </annotationBean>
-      <date>2012-08-30 08:27:12.850 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>7bfc3d74-48bb-4209-951c-99f3d28502e3</identification>
-      </annotationBean>
-      <date>2012-08-30 09:35:48.527 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>625f03ff-b357-4e75-9bdf-066a92cbf952</identification>
-      </annotationBean>
-      <date>2012-08-30 08:25:10.395 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>18b5206d-5153-4871-bb5c-8d78bb0d6863</identification>
-      </annotationBean>
-      <date>2012-08-30 07:38:27.622 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>838ae8e3-62fb-4f81-ac44-4c941628566f</identification>
-      </annotationBean>
-      <date>2012-09-03 11:34:07.207 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>79c17787-cc92-4ccb-8a84-ebf90f11c7ee</identification>
-      </annotationBean>
-      <date>2012-08-29 08:52:19.555 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>586ab0f3-41d1-41b2-a861-007f20b8e0fc</identification>
-      </annotationBean>
-      <date>2012-08-29 12:29:11.92 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>8cb27774-662d-4447-aead-3c2f0d022267</identification>
-      </annotationBean>
-      <date>2012-09-03 11:29:24.157 UTC</date>
-      <creators />
-      <curationEventList />
-    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-  </annotationAssertions>
-</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
-  <annotationAssertions>
-    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
-      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>817c847f-7c5f-43cd-aacd-4d8a8836ada3</identification>
-      </annotationBean>
-      <date>2012-09-03 13:03:42.951 UTC</date>
+      <date>2012-08-30 09:11:54.357 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1270,9 +1241,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>eaec62f8-71ce-4d0a-a273-fdac7f781886</identification>
+        <identification>586ab0f3-41d1-41b2-a861-007f20b8e0fc</identification>
       </annotationBean>
-      <date>2012-08-30 09:24:11.936 UTC</date>
+      <date>2012-08-29 12:29:11.92 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1281,9 +1252,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>bf314919-bd4e-47a8-9064-d10db4566d4e</identification>
+        <identification>2f031199-88dc-4a79-abc7-f432f9c55a35</identification>
       </annotationBean>
-      <date>2012-08-30 07:16:59.307 UTC</date>
+      <date>2012-08-30 08:47:10.223 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1292,9 +1263,97 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>97386f73-3caa-4a5e-82cd-754a9bbdb003</identification>
+        <identification>d6a1a73c-b522-4f19-86ba-8334451a1920</identification>
       </annotationBean>
-      <date>2012-08-29 13:00:52.25 UTC</date>
+      <date>2012-08-29 13:02:13.717 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>163e3219-fdd5-462f-ab63-a6d306dbd8a3</identification>
+      </annotationBean>
+      <date>2012-08-30 09:29:45.681 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>b06031d0-2b74-4c58-8e2c-ca54506d9bcc</identification>
+      </annotationBean>
+      <date>2012-08-29 12:28:42.548 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>de77da9f-c279-437d-ad98-0e632effe014</identification>
+      </annotationBean>
+      <date>2012-08-29 11:50:53.674 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>83ba9759-76ca-4e79-9f6d-b343beb3f529</identification>
+      </annotationBean>
+      <date>2012-08-30 09:05:58.988 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>817c847f-7c5f-43cd-aacd-4d8a8836ada3</identification>
+      </annotationBean>
+      <date>2012-09-03 13:03:42.951 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>dd2b868a-5054-45b3-8065-2a06baf137c2</identification>
+      </annotationBean>
+      <date>2012-09-04 11:07:08.743 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>556b40fa-568d-47a4-a82f-1d5f54e8dcac</identification>
+      </annotationBean>
+      <date>2012-08-30 08:50:39.473 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>b7adf60e-5fa7-4179-80e9-a29d340e6d16</identification>
+      </annotationBean>
+      <date>2012-09-04 11:24:11.431 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1314,9 +1373,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>b32e1e0c-13a7-4758-9a2c-3caee5750985</identification>
+        <identification>e92ad9a2-0cc5-4733-8a2f-14fc0ea336e9</identification>
       </annotationBean>
-      <date>2012-08-30 09:26:47.855 UTC</date>
+      <date>2012-09-04 11:31:28.386 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1325,9 +1384,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>89fc615f-8639-4c2a-acfc-4b36827a93ea</identification>
+        <identification>1e9720fa-ca3c-4010-8277-6346bf89e6bf</identification>
       </annotationBean>
-      <date>2012-08-30 09:11:54.357 UTC</date>
+      <date>2012-08-30 07:29:55.786 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1336,9 +1395,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>2b36155e-3810-4b3f-b1e4-bb22b7c3dedf</identification>
+        <identification>7bfc3d74-48bb-4209-951c-99f3d28502e3</identification>
       </annotationBean>
-      <date>2012-08-30 08:58:30.678 UTC</date>
+      <date>2012-08-30 09:35:48.527 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1347,9 +1406,9 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>62ffcaf8-ac9e-4306-b124-22020826fd67</identification>
+        <identification>0468efae-94af-4f30-8ece-ebc0be914e77</identification>
       </annotationBean>
-      <date>2012-08-30 08:06:24.715 UTC</date>
+      <date>2012-08-30 07:35:41.503 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
@@ -1358,9 +1417,119 @@ domsPid = obj.get("domsPid").toString();
   <annotationAssertions>
     <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
       <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
-        <identification>2f031199-88dc-4a79-abc7-f432f9c55a35</identification>
+        <identification>58dba41b-9b8d-460f-be5c-b9494dd2ea4a</identification>
       </annotationBean>
-      <date>2012-08-30 08:47:10.223 UTC</date>
+      <date>2012-09-04 10:41:01.629 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>0643bb54-b7d3-4286-ad98-18d95ac82274</identification>
+      </annotationBean>
+      <date>2012-08-29 11:50:03.601 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>90eeac4b-e21e-4194-a722-0d8fc72ccb49</identification>
+      </annotationBean>
+      <date>2012-08-30 08:40:24.789 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>838ae8e3-62fb-4f81-ac44-4c941628566f</identification>
+      </annotationBean>
+      <date>2012-09-03 11:34:07.207 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>ef5aca08-95fe-4a4f-9f1b-0d414c373f3c</identification>
+      </annotationBean>
+      <date>2012-09-04 10:21:00.679 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>3d792fb0-3d4b-4f84-a207-1a025e826a7f</identification>
+      </annotationBean>
+      <date>2012-08-30 08:27:12.850 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>625f03ff-b357-4e75-9bdf-066a92cbf952</identification>
+      </annotationBean>
+      <date>2012-08-30 08:25:10.395 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>97386f73-3caa-4a5e-82cd-754a9bbdb003</identification>
+      </annotationBean>
+      <date>2012-08-29 13:00:52.25 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>8cb27774-662d-4447-aead-3c2f0d022267</identification>
+      </annotationBean>
+      <date>2012-09-03 11:29:24.157 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>bf314919-bd4e-47a8-9064-d10db4566d4e</identification>
+      </annotationBean>
+      <date>2012-08-30 07:16:59.307 UTC</date>
+      <creators />
+      <curationEventList />
+    </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+  </annotationAssertions>
+</net.sf.taverna.t2.annotation.AnnotationChainImpl></annotation_chain_2_2><annotation_chain_2_2 encoding="xstream"><net.sf.taverna.t2.annotation.AnnotationChainImpl xmlns="">
+  <annotationAssertions>
+    <net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
+      <annotationBean class="net.sf.taverna.t2.annotation.annotationbeans.IdentificationAssertion">
+        <identification>d3f4fc20-7339-48e5-919a-7c267d91d396</identification>
+      </annotationBean>
+      <date>2012-08-30 08:44:39.408 UTC</date>
       <creators />
       <curationEventList />
     </net.sf.taverna.t2.annotation.AnnotationAssertionImpl>
