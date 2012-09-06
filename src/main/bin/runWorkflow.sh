@@ -36,7 +36,7 @@ mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
--inputvalue mpgfile "$1"  \
+-inputvalue mpgfile "$1" -inputvalue vhslabel "$2" -inputvalue starttime "$3" -inputvalue stoptime "$4" \
 "$VHSINGEST_WORKFLOWS/vhsingest.t2flow"
 
 exit 0

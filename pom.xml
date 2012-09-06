@@ -60,7 +60,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${vhsingest.doms.ingester}</artifactId>
-            <version>0.1.1</version>
+            <version>0.1.2-SNAPSHOT</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>

@@ -7,7 +7,8 @@ echo "This tests just ensures that at least one file makes it through the workfl
 
 
 cd ..
-./bin/runWorkflow.sh "/home/yousee/scratch/vhstestfiles/Deadline_17_2_2005_17_1.mpeg"
+./bin/runWorkflow.sh "/home/yousee/scratch/vhstestfiles/Deadline_17_2_2005_17_1.mpeg" \
+"foobarbaz" "2006-06-29T22:05:56" "2006-06-30T03:49:45"
 RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
