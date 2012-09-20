@@ -7,6 +7,14 @@ if [ -r setenv.sh ]; then
     source setenv.sh
 fi
 
+INPUT=""
+
+for var in "$@"
+do
+    INPUT="  $INPUT -inputvalue ${var/=/ } "
+done
+
+
 
 if [ -z "$VHSINGEST_HOME" ]; then
    echo "VHSINGEST_HOME is not set. Must be set before execution. Exiting"
@@ -30,15 +38,15 @@ if [ -z "$VHSINGEST_WORKFLOW_CONFIG" ]; then
 fi
 
 
+
+
 cd $WD
 mkdir -p $VHSINGEST_LOGS
 mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
--inputvalue mpgfile "$1" -inputvalue vhslabel "$2" -inputvalue starttime "$3" \
--inputvalue stoptime "$4" -inputvalue channelid "$5" -inputvalue quality "$6" \
--inputvalue recorder "$7" \
+$INPUT \
 "$VHSINGEST_WORKFLOWS/vhsingest.t2flow"
 
 exit 0
