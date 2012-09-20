@@ -8,6 +8,10 @@ REMOTEURL=$2
 CHECKSUM=$3
 FFPROBEPROFILE_LOCATION=$4
 VHSMETADATA_LOCATION=$5
+USERNAME=$6
+PASSWORD=$7
+WSDL=$8
+
 
 NAME=`basename $0 .sh`
 
@@ -24,7 +28,10 @@ CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:`dirname 
  -url $REMOTEURL \
  -ffprobe $FFPROBEPROFILE_LOCATION \
  -metadata $VHSMETADATA_LOCATION \
- -config $CONFIGFILE "
+ -config $CONFIGFILE \
+ -user $USERNAME \
+ -pass $PASSWORD \
+ -wsdl $WSDL"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
