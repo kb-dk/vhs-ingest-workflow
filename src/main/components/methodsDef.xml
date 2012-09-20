@@ -1,0 +1,60 @@
+
+<ns:methods xmlns:ns="http://ecm.sourceforge.net/types/methods/0/2/#">
+  <ns:method>
+    <ns:name>VHS import</ns:name>
+    <ns:command><![CDATA[
+        cd $VHSINGEST_HOME;
+        $VHSINGEST_HOME/bin/runWorkflow.sh "mpgfile=%%file%%" "vhslabel=%%vhs-label%%" "starttime=%%timeStart%%" \
+                     "stoptime=%%timeEnd%%" "channelid=%%channelID%%" "quality=%%quality%%" "recorder=%%recorder%%" \
+                     "domsUser=%%domsUser%%" "domsPass=%%domsPassword%%" "domsLocation=%%domsLocation%%" \
+                      < /dev/null > /$VHSINGEST_HOME/ingest.out 2>&1 &
+        echo "Started ingest of VHS recording"
+        ]]></ns:command>
+    <ns:type>static</ns:type>
+    <ns:parameters>
+      <ns:parameter>
+        <ns:name>quality</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>Integer</ns:type>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>file</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>ServerFile</ns:type>
+        <ns:config>/fedora/vhssamplefiles</ns:config>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>channelID</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>Text</ns:type>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>timeStart</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>Datetime</ns:type>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>timeEnd</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>Datetime</ns:type>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>vhs-label</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>TextBox</ns:type>
+      </ns:parameter>
+      <ns:parameter>
+        <ns:name>recorder</ns:name>
+        <ns:required>true</ns:required>
+        <ns:repeatable>false</ns:repeatable>
+        <ns:type>Text</ns:type>
+      </ns:parameter>
+    </ns:parameters>
+  </ns:method>
+</ns:methods>

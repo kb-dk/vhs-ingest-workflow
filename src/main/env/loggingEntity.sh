@@ -31,11 +31,11 @@ log() {
 	if [ -z "${*:4}" ]; then
 		return
 	fi
-#        flock -s 200
 	lockfile $LOCKFILE
         if [ $verbosity -ge $2 ]; then
             # Expand escaped characters, wrap at 70 chars, indent wrapped lines
             echo -e "`date +'%b %d %H:%M:%S'`" "`hostname`" "`basename $0`[$$]" "${@:3}" | fold -w70 -s | sed '2~1s/^/  /' >> $LOGDIR/$1.log
         fi
-    ) 200>$LOCKFILE
+	rm -f $LOCKFILE
+    ) 
 }
