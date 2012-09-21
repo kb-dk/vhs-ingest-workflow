@@ -4,9 +4,9 @@
     <ns:name>VHS import</ns:name>
     <ns:command><![CDATA[
         cd $VHSINGEST_HOME;
-        $VHSINGEST_HOME/bin/runWorkflow.sh mpgfile=%%file%% vhslabel=%%vhs-label%% starttime=%%timeStart%% \
-                     stoptime=%%timeEnd%% channelid=%%channelID%% quality=%%quality%% recorder=%%recorder%% \
-                     domsUser=%%domsUser%% domsPass=%%domsPassword%% domsLocation=%%domsLocation%% \
+        $VHSINGEST_HOME/bin/runWorkflow.sh "mpgfile=%%file%%" "vhslabel=%%vhs-label%%" "starttime=%%timeStart%%" \
+                     "stoptime=%%timeEnd%%" "channelid=%%channelID%%" "quality=%%quality%%" "recorder=%%recorder%%" \
+                     "domsUser=%%domsUser%%" "domsPass=%%domsPassword%%" "domsLocation=%%domsLocation%%" "templatePid=doms:Template_RadioTVFile" \
                       < /dev/null > /$VHSINGEST_HOME/ingest.out 2>&1 &
         echo "Started ingest of VHS recording"
         ]]></ns:command>

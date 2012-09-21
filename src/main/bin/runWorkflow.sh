@@ -11,7 +11,7 @@ INPUT=""
 
 for var in "$@"
 do
-    INPUT="  $INPUT -inputvalue ${var/=/ } "
+      INPUT="  $INPUT -inputvalue ${var/=/ } "
 done
 
 
@@ -44,10 +44,13 @@ cd $WD
 mkdir -p $VHSINGEST_LOGS
 mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
+echo $INPUT
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
 $INPUT \
 "$VHSINGEST_WORKFLOWS/vhsingest.t2flow"
+
+
 
 exit 0
 
