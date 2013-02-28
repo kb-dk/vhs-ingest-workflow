@@ -34,25 +34,45 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
-            <directoryMode>0744</directoryMode>
-            <useTransitiveDependencies>false</useTransitiveDependencies>
-            <unpack>true</unpack>
-            <includes>
-                <include>${medieplatform}:${crosscheck.characteriser}</include>
-            </includes>
-            <scope>runtime</scope>
-        </dependencySet>
-
-
-        <dependencySet>
-            <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${vhsingest.components.dir}/${profile.validator}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
                 <include>${medieplatform}:${profile.validator}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${vhsingest.components.dir}/${vhsingest.bitrepository.ingester}/external-products</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <excludes>
+                    <exclude>${vhsingest.bitrepository.ingester}-*</exclude>
+                </excludes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${vhsingest.bitrepository.ingester}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${vhsingest.components.dir}/${vhsingest.bitrepository.ingester}/bin</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <includes>
+                    <include>${vhsingest.bitrepository.ingester}-*</include>
+                </includes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${vhsingest.bitrepository.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
@@ -73,6 +93,7 @@
             </includes>
             <scope>runtime</scope>
         </dependencySet>
+
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${vhsingest.components.dir}/${vhsingest.doms.ingester}/bin</outputDirectory>
@@ -145,21 +166,6 @@
             <source>src/main/scripts/bitstorage.ingest.sh</source>
             <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <destName>${bitstorage.ingest}.sh</destName>
-            <fileMode>0700</fileMode>
-            <filtered>true</filtered>
-        </file>
-
-        <file>
-            <source>src/main/scripts/crosscheck.characteriser.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
-            <destName>${crosscheck.characteriser}.sh</destName>
-            <fileMode>0700</fileMode>
-            <filtered>true</filtered>
-        </file>
-        <file>
-            <source>src/main/scripts/crosscheck.profile.validator.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
-            <destName>${crosscheck.profile.validator}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>

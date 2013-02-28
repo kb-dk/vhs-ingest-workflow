@@ -27,10 +27,8 @@
         <vhsingest.bitrepository.ingester>yousee-bitrepository-ingester</vhsingest.bitrepository.ingester>
         <vhsingest.digitv.ingester>yousee-digitv-ingester</vhsingest.digitv.ingester>
         <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
-        <crosscheck.profile.validator>crosscheck-profile-validator</crosscheck.profile.validator>
         <profile.validator>profile-validator</profile.validator>
         <vhsingest.doms.ingester>yousee-doms-ingester</vhsingest.doms.ingester>
-        <crosscheck.characteriser>crosscheck-characteriser</crosscheck.characteriser>
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
         <master.validator>master-validator</master.validator>
         <vhsingest.ingest.workflow>yousee-ingest-workflow</vhsingest.ingest.workflow>
@@ -48,7 +46,6 @@
         </dependency>
 
         <!--Yousee FFProbe Profile Validator-->
-        <!--Yousee CrossCheck Profile Validator-->
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${profile.validator}</artifactId>
@@ -73,14 +70,14 @@
             <type>zip</type>
         </dependency>
 
+        <!--Yousee Bitrepository Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
-            <artifactId>${crosscheck.characteriser}</artifactId>
-            <version>0.8</version>
+            <artifactId>${vhsingest.bitrepository.ingester}</artifactId>
+            <version>0.5</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
-
     </dependencies>
 
     <repositories>
