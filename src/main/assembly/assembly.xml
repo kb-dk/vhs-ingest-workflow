@@ -113,9 +113,7 @@
 
     </dependencySets>
 
-
     <fileSets>
-
         <fileSet>
             <outputDirectory>${vhsingest.bin}</outputDirectory>
             <directory>src/main/bin</directory>
@@ -129,7 +127,6 @@
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
-
         <fileSet>
             <outputDirectory>${vhsingest.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
@@ -137,7 +134,6 @@
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
-
         <fileSet>
             <outputDirectory>${vhsingest.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
@@ -145,7 +141,6 @@
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
-
 
         <fileSet>
             <outputDirectory>${vhsingest.workflow.dir}</outputDirectory>
@@ -190,15 +185,7 @@
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
-        <file>
-            <source>src/main/scripts/master.validator.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
-            <destName>${master.validator}.sh</destName>
-            <fileMode>0700</fileMode>
-            <filtered>true</filtered>
-        </file>
     </files>
-
 
 </assembly>
 
