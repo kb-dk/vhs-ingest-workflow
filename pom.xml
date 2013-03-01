@@ -25,12 +25,10 @@
 
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
         <vhsingest.bitrepository.ingester>yousee-bitrepository-ingester</vhsingest.bitrepository.ingester>
-        <vhsingest.digitv.ingester>yousee-digitv-ingester</vhsingest.digitv.ingester>
         <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
         <profile.validator>profile-validator</profile.validator>
         <vhsingest.doms.ingester>yousee-doms-ingester</vhsingest.doms.ingester>
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
-        <master.validator>master-validator</master.validator>
         <vhsingest.ingest.workflow>yousee-ingest-workflow</vhsingest.ingest.workflow>
         <vhsingest.ingest.workflow.completed>${vhsingest.ingest.workflow}-completed</vhsingest.ingest.workflow.completed>
         <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
