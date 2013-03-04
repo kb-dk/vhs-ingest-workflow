@@ -9,30 +9,46 @@
 
 
     <properties>
-        <vhsingest.home>$VHSINGEST_HOME</vhsingest.home>
-        <vhsingest.logs>logs</vhsingest.logs>
-        <vhsingest.locks>locks</vhsingest.locks>
-        <vhsingest.workflow.dependencies>workflowDependencies</vhsingest.workflow.dependencies>
-        <vhsingest.workflow.dir>taverna</vhsingest.workflow.dir>
-        <vhsingest.workflow.config>${vhsingest.config}/youseeingestworkflow</vhsingest.workflow.config>
-        <vhsingest.script.dir>scripts</vhsingest.script.dir>
-        <vhsingest.components.dir>components</vhsingest.components.dir>
-        <vhsingest.bin>bin</vhsingest.bin>
+        <install.home.dir>$VHSINGEST_HOME</install.home.dir>
+        <install.logs.dir>logs</install.logs.dir>
+        <install.locks.dir>locks</install.locks.dir>
+        <install.script.dir>scripts</install.script.dir>
+        <install.components.dir>components</install.components.dir>
+        <install.bin.dir>bin</install.bin.dir>
+        <install.config.dir>$HOME/vhs-ingest-config</install.config.dir>
 
-        <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
-        <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
-        <vhsingest.config>$HOME/vhs-ingest-config</vhsingest.config>
 
+        <workflow.dependencies.dir>workflowDependencies</workflow.dependencies.dir>
+        <workflow.dir>taverna</workflow.dir>
+        <workflow.config>${install.config.dir}/youseeingestworkflow</workflow.config>
+
+
+        <!--Shorthand-->
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
-        <vhsingest.bitrepository.ingester>yousee-bitrepository-ingester</vhsingest.bitrepository.ingester>
+
+        <!---->
+        <bitrepository.ingester>yousee-bitrepository-ingester</bitrepository.ingester>
+
         <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
         <profile.validator>profile-validator</profile.validator>
-        <vhsingest.doms.ingester>yousee-doms-ingester</vhsingest.doms.ingester>
+        <doms.ingester>yousee-doms-ingester</doms.ingester>
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
-        <vhsingest.ingest.workflow>yousee-ingest-workflow</vhsingest.ingest.workflow>
-        <vhsingest.ingest.workflow.completed>${vhsingest.ingest.workflow}-completed</vhsingest.ingest.workflow.completed>
+        <ingest.workflow>yousee-ingest-workflow</ingest.workflow>
+        <ingest.workflow.completed>${ingest.workflow}-completed</ingest.workflow.completed>
         <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--IntegrationTest-->
+
+        <integrationtest.host>canopus</integrationtest.host>
+        <integrationtest.username>yousee</integrationtest.username>
+        <integrationtest.keyFile>${env.passwordlessKey}</integrationtest.keyFile>
+        <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
+        <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
+
+
+
     </properties>
 
     <dependencies>
@@ -54,7 +70,7 @@
         <!--Yousee Doms Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
-            <artifactId>${vhsingest.doms.ingester}</artifactId>
+            <artifactId>${doms.ingester}</artifactId>
             <version>0.1.2-SNAPSHOT</version>
             <classifier>bundle</classifier>
             <type>zip</type>
@@ -71,7 +87,7 @@
         <!--Yousee Bitrepository Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
-            <artifactId>${vhsingest.bitrepository.ingester}</artifactId>
+            <artifactId>${bitrepository.ingester}</artifactId>
             <version>0.5</version>
             <classifier>bundle</classifier>
             <type>zip</type>
@@ -97,7 +113,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2.2</version>
+                <version>2.4</version>
                 <configuration>
                     <descriptors>
                         <descriptor>src/main/assembly/assembly.xml</descriptor>
@@ -135,9 +151,25 @@
                                     <target>
 
                                         <!-- Requires that a private/public key login has been enabled for this account -->
-                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; rm -rf vhs-ingest*; rm -rf services/*;" failonerror="true" />
-                                        <scp file="${project.build.directory}/${project.build.finalName}-bundle.tar.gz" toDir="yousee@canopus:${integrationtest.basedir}" keyfile="${env.passwordlessKey}" />
-                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command=" cd ${integrationtest.basedir}; tar xfz ${project.build.finalName}-bundle.tar.gz; mkdir ${integrationtest.workflowdir}; mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;                                            " failonerror="true" />
+                                        <sshexec host="${integrationtest.host}"
+                                                 username="${integrationtest.username}"
+                                                 keyfile="${integrationtest.keyFile}"
+                                                 command=" cd ${integrationtest.basedir};
+                                                           rm -rf vhs-ingest*;
+                                                           rm -rf services/*;"
+                                                 failonerror="true" />
+                                        <scp file="${project.build.directory}/${project.build.finalName}-bundle.tar.gz"
+                                             toDir="${integrationtest.username}@${integrationtest.host}:${integrationtest.basedir}"
+                                             keyfile="${integrationtest.keyFile}" />
+                                        <sshexec host="${integrationtest.host}"
+                                                 username="${integrationtest.username}"
+                                                 keyfile="${integrationtest.keyFile}"
+                                                 command="
+                                                 cd ${integrationtest.basedir};
+                                                 tar xfz ${project.build.finalName}-bundle.tar.gz;
+                                                 mkdir ${integrationtest.workflowdir};
+                                                 mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;"
+                                                 failonerror="true" />
                                         <!--Find deply folder ${project.build.outputDirectory}-->
                                         <!--unzip package-->
                                     </target>
@@ -158,7 +190,11 @@
                                     <!--Run workflow-->
 
                                     <target>
-                                        <sshexec host="canopus" username="yousee" keyfile="${env.passwordlessKey}" command="${integrationtest.workflowdir}/integrationTests/runIntegrationTests.sh" failonerror="true">
+                                        <sshexec host="${integrationtest.host}"
+                                                 username="${integrationtest.username}"
+                                                 keyfile="${integrationtest.keyFile"
+                                                 command="${integrationtest.workflowdir}/integrationTests/runIntegrationTests.sh"
+                                                 failonerror="true">
                                         </sshexec>
                                     </target>
                                 </configuration>
@@ -172,7 +208,7 @@
                             <dependency>
                                 <groupId>org.apache.ant</groupId>
                                 <artifactId>ant-jsch</artifactId>
-                                <version>1.8.2</version>
+                                <version>1.8.4</version>
                             </dependency>
                         </dependencies>
                     </plugin>
@@ -180,10 +216,6 @@
             </build>
         </profile>
 
-        <profile>
-            <id>deploy2test</id>
-
-        </profile>
     </profiles>
 
 </project>

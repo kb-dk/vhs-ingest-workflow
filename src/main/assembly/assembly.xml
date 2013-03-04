@@ -10,7 +10,7 @@
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.workflow.dependencies}</outputDirectory>
+            <outputDirectory>${install.workflow.dependencies}</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <useTransitiveFiltering>true</useTransitiveFiltering>
@@ -22,7 +22,7 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
+            <outputDirectory>${install.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
@@ -34,7 +34,7 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${profile.validator}/bin</outputDirectory>
+            <outputDirectory>${install.components.dir}/${profile.validator}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
@@ -46,67 +46,67 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${vhsingest.bitrepository.ingester}/external-products</outputDirectory>
+            <outputDirectory>${install.components.dir}/${bitrepository.ingester}/external-products</outputDirectory>
             <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <excludes>
-                    <exclude>${vhsingest.bitrepository.ingester}-*</exclude>
+                    <exclude>${bitrepository.ingester}-*</exclude>
                 </excludes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${vhsingest.bitrepository.ingester}</include>
+                <include>${medieplatform}:${bitrepository.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${vhsingest.bitrepository.ingester}/bin</outputDirectory>
+            <outputDirectory>${install.components.dir}/${bitrepository.ingester}/bin</outputDirectory>
             <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <includes>
-                    <include>${vhsingest.bitrepository.ingester}-*</include>
+                    <include>${bitrepository.ingester}-*</include>
                 </includes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${vhsingest.bitrepository.ingester}</include>
+                <include>${medieplatform}:${bitrepository.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${vhsingest.doms.ingester}/external-products</outputDirectory>
+            <outputDirectory>${install.components.dir}/${doms.ingester}/external-products</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <excludes>
-                    <exclude>${vhsingest.doms.ingester}-*.jar</exclude>
+                    <exclude>${doms.ingester}-*.jar</exclude>
                 </excludes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${vhsingest.doms.ingester}</include>
+                <include>${medieplatform}:${doms.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${vhsingest.components.dir}/${vhsingest.doms.ingester}/bin</outputDirectory>
+            <outputDirectory>${install.components.dir}/${doms.ingester}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <includes>
-                    <include>${vhsingest.doms.ingester}-*.jar</include>
+                    <include>${doms.ingester}-*.jar</include>
                 </includes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${vhsingest.doms.ingester}</include>
+                <include>${medieplatform}:${doms.ingester}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
@@ -115,7 +115,7 @@
 
     <fileSets>
         <fileSet>
-            <outputDirectory>${vhsingest.bin}</outputDirectory>
+            <outputDirectory>${install.bin.dir}</outputDirectory>
             <directory>src/main/bin</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
@@ -128,14 +128,14 @@
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
+            <outputDirectory>${install.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
-            <outputDirectory>${vhsingest.components.dir}</outputDirectory>
+            <outputDirectory>${install.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
             <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
@@ -143,7 +143,7 @@
         </fileSet>
 
         <fileSet>
-            <outputDirectory>${vhsingest.workflow.dir}</outputDirectory>
+            <outputDirectory>${workflow.dir}</outputDirectory>
             <directoryMode>0744</directoryMode>
             <directory>src/main/taverna</directory>
             <filtered>true</filtered>
@@ -159,29 +159,29 @@
     <files>
         <file>
             <source>src/main/scripts/bitstorage.ingest.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
+            <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${bitstorage.ingest}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.characteriser.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
+            <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${ffprobe.characteriser}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.profile.validator.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
+            <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${ffprobe.profile.validator}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
-            <source>src/main/scripts/vhsingest.doms.ingester.sh</source>
-            <outputDirectory>${vhsingest.script.dir}</outputDirectory>
-            <destName>${vhsingest.doms.ingester}.sh</destName>
+            <source>src/main/scripts/doms.ingester.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${doms.ingester}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>

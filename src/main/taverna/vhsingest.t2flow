@@ -210,7 +210,7 @@ $VHSINGEST_SCRIPTS/${ffprobe.characteriser}.sh `basename "%%mpegfile%%"` "%%mpeg
   <useCaseDescription>
     <usecaseid />
     <description />
-    <command>$VHSINGEST_SCRIPTS/${vhsingest.doms.ingester}.sh "%%filename%%" "%%remoteURL%%" "%%checksum%%" "ffprobeinput" "vhsMetadata" "%%domsUser%%"  "%%domsPass%%"  "%%domsLocation%%"
+    <command>$VHSINGEST_SCRIPTS/${doms.ingester}.sh "%%filename%%" "%%remoteURL%%" "%%checksum%%" "ffprobeinput" "vhsMetadata" "%%domsUser%%"  "%%domsPass%%"  "%%domsLocation%%"
 
 #/home/ktc/test/testworkflow/scripts/domsvhsfilecreator.sh "crosscheckinput" "ffprobeinput" "% %fileurl%%"</command>
     <preparingTimeoutInSeconds>1200</preparingTimeoutInSeconds>

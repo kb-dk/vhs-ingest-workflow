@@ -16,26 +16,52 @@ wrn_lvl=2
 inf_lvl=3
 dbg_lvl=4
 
-notify() { log $1 $silent_lvl "NOTE:" "${@:2}"; } # Always prints
+notify() {
+ local logfile="$1"
+ shift
+ local message="${@}"
+ log "$logfile" $silent_lvl "NOTE: $message";
+} # Always prints
 
-error() { log $1 $err_lvl "ERROR:" "${@:2}" ; }
+error() {
+  local logfile="$1"
+ shift
+ local message="${@}"
+ log "$logfile" $err_lvl "ERROR: $message" ; }
 
-warn() { log $1 $wrn_lvl "WARNING:" "${@:2}"; }
+warn() {
+  local logfile="$1"
+ shift
+ local message="${@}"
+ log "$logfile" $wrn_lvl "WARNING: $message"; }
 
-inf() { log $1 $inf_lvl "INFO:" "${@:2}"; } # "info" is already a command
+inf() {
+  local logfile="$1"
+ shift
+ local message="${@}"
+ log "$logfile" $inf_lvl "INFO: $message"; } # "info" is already a command
 
-debug() { log $1 $dbg_lvl "DEBUG:" "${@:2}"; }
+debug() {
+  local logfile="$1"
+ shift
+ local message="${@}"
+ log "$logfile" $dbg_lvl "DEBUG: $message"; }
 
 log() {
-    (
-	if [ -z "${*:4}" ]; then
+    local logfile="$1"
+    shift
+    local loglevel="$1"
+    shift
+    local message="$*"
+
+	if [ -z "$logfile" ]; then
 		return
 	fi
-	lockfile $LOCKFILE
-        if [ $verbosity -ge $2 ]; then
+	lockfile "$LOCKFILE"
+        if [ $verbosity -ge $loglevel ]; then
             # Expand escaped characters, wrap at 70 chars, indent wrapped lines
-            echo -e "`date +'%b %d %H:%M:%S'`" "`hostname`" "`basename $0`[$$]" "${@:3}" | fold -w70 -s | sed '2~1s/^/  /' >> $LOGDIR/$1.log
+            echo -e "`date +'%b %d %H:%M:%S'`" "`hostname`" "`basename $0`[$$]" "$message" | fold -w70 -s | sed '2~1s/^/  /' >> "$LOGDIR/$logfile.log"
         fi
-	rm -f $LOCKFILE
-    ) 
+	rm -f "$LOCKFILE"
+
 }

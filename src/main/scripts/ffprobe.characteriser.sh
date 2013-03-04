@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-cd $(dirname $(readlink -f $0))
+pushd $(dirname $(readlink -f $0)) > /dev/null
 
 ENTITY=$1
 LOCALFILE=$2
@@ -15,5 +15,7 @@ CMD="$VHSINGEST_COMPONENTS/${ffprobe.characteriser}/bin/ffprobeCharacterise.sh $
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
 echo "$OUTPUT"
+
+popd > /dev/null
 exit "$RETURNCODE"
 
