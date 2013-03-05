@@ -3,7 +3,7 @@ export JAVA_HOME="/home/fedora/Tools/jdk1.6.0_22"
 
 
 export VHSINGEST_HOME=~/ingester-workflow/vhs-ingest-workflow/;
-export VHSINGEST_WORKFLOW_CONFIG=~/ingester-workflow/vhs-ingest-config/youseeingestworkflow/;
+export VHSINGEST_WORKFLOW_CONFIG=~/ingester-workflow/vhs-ingest-config/vhsfileingestworkflow/;
 export VHSINGEST_CONFIG=~/ingester-workflow/vhs-ingest-config/;
 
 #export VHSINGEST_HOME="$SCRIPT_PATH/.."

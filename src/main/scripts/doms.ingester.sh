@@ -13,7 +13,7 @@ PASSWORD=$7
 WSDL=$8
 
 
-NAME=`basename $0 .sh`
+NAME=$(basename $0 .sh)
 
 source env.sh
 
@@ -22,7 +22,7 @@ APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester}"
 cd $WD
 
 #CMD="echo {\"domsPid\": \"uuid:9dabe130-f1d9-11e1-aff1-0800200c9a66\"}"
-CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:`dirname $CONFIGFILE` \
+CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname $CONFIGFILE) \
  dk.statsbiblioteket.doms.vhs.VHSIngesterCLI \
  -filename $ENTITY \
  -url $REMOTEURL \

@@ -78,7 +78,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${doms.ingester}</artifactId>
-            <version>0.1.2-SNAPSHOT</version>
+            <version>0.1.6-SNAPSHOT</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
