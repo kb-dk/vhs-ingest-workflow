@@ -3,7 +3,7 @@
     <id>bundle</id>
 
     <formats>
-        <format>zip</format>
+        <format>tar.gz</format>
     </formats>
     <!--<includeBaseDirectory>false</includeBaseDirectory>-->
 
@@ -118,28 +118,28 @@
             <outputDirectory>${install.bin.dir}</outputDirectory>
             <directory>src/main/bin</directory>
             <directoryMode>0744</directoryMode>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>integrationTests</outputDirectory>
             <directory>src/main/integrationTests</directory>
             <directoryMode>0744</directoryMode>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
             <directoryMode>0744</directoryMode>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>${install.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
             <directoryMode>0744</directoryMode>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
 
@@ -162,35 +162,35 @@
             <source>src/main/scripts/bitstorage.ingest.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${bitstorage.ingest}.sh</destName>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.characteriser.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${ffprobe.characteriser}.sh</destName>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/ffprobe.profile.validator.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${ffprobe.profile.validator}.sh</destName>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/doms.ingester.vhsfile.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${doms.ingester.vhsfile}.sh</destName>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
         <file>
             <source>src/main/scripts/doms.ingester.vhsclip.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${doms.ingester.vhsclip}.sh</destName>
-            <fileMode>0700</fileMode>
+            <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
 

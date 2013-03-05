@@ -163,7 +163,7 @@
                         <version>1.7</version>
                         <executions>
                             <execution>
-                                <id>Extract zip bundle</id>
+                                <id>Extract tar.gz bundle</id>
 
                                 <phase>pre-integration-test</phase>
                                 <configuration>
