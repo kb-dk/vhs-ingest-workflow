@@ -15,7 +15,12 @@ NAME=$(basename $0 .sh)
 
 source env.sh
 
-CMD="$VHSINGEST_COMPONENTS/${bitrepository.ingester}/bin/${bitrepository.ingester}.sh $CONFIGFILE $LOCALFILEURL $REMOTEFILEID $CHECKSUM $FILESIZE"
+APPDIR="$VHSINGEST_COMPONENTS/${bitrepository.ingester}"
+
+# dk.statsbiblioteket.medieplatform.bitrepository.ingester.Ingester \
+CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/* \
+dk.statsbiblioteket.medieplatform.bitrepository.ingester.TheMockClient \
+$CONFIGFILE $LOCALFILEURL $REMOTEFILEID $CHECKSUM $FILESIZE"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
