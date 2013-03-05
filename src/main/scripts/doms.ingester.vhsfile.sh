@@ -10,7 +10,7 @@ FFPROBEPROFILE_LOCATION=$4
 VHSMETADATA_LOCATION=$5
 USERNAME=$6
 PASSWORD=$7
-WSDL=$8
+
 
 
 NAME=$(basename $0 .sh)
@@ -30,8 +30,7 @@ CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname
  -metadata $VHSMETADATA_LOCATION \
  -config $CONFIGFILE \
  -user $USERNAME \
- -pass $PASSWORD \
- -wsdl $WSDL"
+ -pass $PASSWORD"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?

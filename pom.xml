@@ -27,7 +27,7 @@
 
         <workflow.dependencies.dir>workflowDependencies</workflow.dependencies.dir>
         <workflow.dir>taverna</workflow.dir>
-        <workflow.config>${install.config.dir}/youseeingestworkflow</workflow.config>
+        <workflow.config>${install.config.dir}/vhsfileingestworkflow</workflow.config>
 
 
         <!--Shorthand-->
@@ -211,7 +211,7 @@
                                     <target>
                                         <sshexec host="${integrationtest.host}"
                                                  username="${integrationtest.username}"
-                                                 keyfile="${integrationtest.keyFile"
+                                                 keyfile="${integrationtest.keyFile}"
                                                  command="${integrationtest.workflowdir}/integrationTests/runIntegrationTests.sh"
                                                  failonerror="true">
                                         </sshexec>

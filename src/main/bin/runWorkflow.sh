@@ -7,12 +7,12 @@ if [ -r setenv.sh ]; then
     source setenv.sh
 fi
 
-INPUT=""
+#INPUT=""
 
-for var in "$@"
-do
-      INPUT="  $INPUT -inputvalue ${var/=/ } "
-done
+#for var in "$@"
+#do
+#      INPUT="  $INPUT -inputvalue ${var/=/ } "
+#done
 
 
 
@@ -44,12 +44,8 @@ cd $WD
 mkdir -p $VHSINGEST_LOGS
 mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
-echo $INPUT
-$TAVERNA_HOME/executeworkflow.sh \
--inmemory \
-$INPUT \
-"$VHSINGEST_WORKFLOWS/vhsfileingest.t2flow"
-
+#echo $INPUT
+$TAVERNA_HOME/executeworkflow.sh -inmemory "$@" "$VHSINGEST_WORKFLOWS/vhsfileingest.t2flow"
 
 exit 0
 
