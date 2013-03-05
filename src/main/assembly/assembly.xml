@@ -10,7 +10,7 @@
     <dependencySets>
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${install.workflow.dependencies}</outputDirectory>
+            <outputDirectory>${workflow.dependencies.dir}</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <useTransitiveFiltering>true</useTransitiveFiltering>
@@ -124,6 +124,7 @@
         <fileSet>
             <outputDirectory>integrationTests</outputDirectory>
             <directory>src/main/integrationTests</directory>
+            <directoryMode>0744</directoryMode>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </fileSet>
