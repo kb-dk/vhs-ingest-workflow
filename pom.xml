@@ -8,6 +8,13 @@
     <packaging>pom</packaging>
 
 
+    <parent>
+        <groupId>org.sbforge</groupId>
+        <artifactId>sbforge-parent</artifactId>
+        <version>12</version>
+    </parent>
+
+
     <properties>
         <install.home.dir>$VHSINGEST_HOME</install.home.dir>
         <install.logs.dir>logs</install.logs.dir>
