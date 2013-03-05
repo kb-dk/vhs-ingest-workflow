@@ -48,7 +48,7 @@ echo $INPUT
 $TAVERNA_HOME/executeworkflow.sh \
 -inmemory \
 $INPUT \
-"$VHSINGEST_WORKFLOWS/vhsingest.t2flow"
+"$VHSINGEST_WORKFLOWS/vhsfileingest.t2flow"
 
 
 exit 0
