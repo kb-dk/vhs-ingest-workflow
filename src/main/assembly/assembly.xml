@@ -79,34 +79,34 @@
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${install.components.dir}/${doms.ingester}/external-products</outputDirectory>
+            <outputDirectory>${install.components.dir}/${doms.ingester.project}/external-products</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <excludes>
-                    <exclude>${doms.ingester}-*.jar</exclude>
+                    <exclude>${doms.ingester.project}-*.jar</exclude>
                 </excludes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${doms.ingester}</include>
+                <include>${medieplatform}:${doms.ingester.project}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
 
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
-            <outputDirectory>${install.components.dir}/${doms.ingester}/bin</outputDirectory>
+            <outputDirectory>${install.components.dir}/${doms.ingester.project}/bin</outputDirectory>
             <directoryMode>0744</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
                 <includes>
-                    <include>${doms.ingester}-*.jar</include>
+                    <include>${doms.ingester.project}-*.jar</include>
                 </includes>
             </unpackOptions>
             <includes>
-                <include>${medieplatform}:${doms.ingester}</include>
+                <include>${medieplatform}:${doms.ingester.project}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
@@ -180,12 +180,20 @@
             <filtered>true</filtered>
         </file>
         <file>
-            <source>src/main/scripts/doms.ingester.sh</source>
+            <source>src/main/scripts/doms.ingester.vhsfile.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
-            <destName>${doms.ingester}.sh</destName>
+            <destName>${doms.ingester.vhsfile}.sh</destName>
             <fileMode>0700</fileMode>
             <filtered>true</filtered>
         </file>
+        <file>
+            <source>src/main/scripts/doms.ingester.vhsclip.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${doms.ingester.vhsclip}.sh</destName>
+            <fileMode>0700</fileMode>
+            <filtered>true</filtered>
+        </file>
+
     </files>
 
 </assembly>

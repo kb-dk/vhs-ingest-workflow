@@ -33,21 +33,33 @@
         <!--Shorthand-->
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
 
-        <!---->
+        <!--maven package name-->
         <bitrepository.ingester>yousee-bitrepository-ingester</bitrepository.ingester>
-
-        <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
-        <profile.validator>profile-validator</profile.validator>
-        <doms.ingester>yousee-doms-ingester</doms.ingester>
-        <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
-        <ingest.workflow>yousee-ingest-workflow</ingest.workflow>
-        <ingest.workflow.completed>${ingest.workflow}-completed</ingest.workflow.completed>
+        <!--shellscript name-->
         <bitstorage.ingest>bitstorageIngest</bitstorage.ingest>
+
+        <!--Shell script name-->
+        <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
+
+        <!--maven project-->
+        <profile.validator>profile-validator</profile.validator>
+
+        <!--package name-->
+        <doms.ingester.project>yousee-doms-ingester</doms.ingester.project>
+        <!--script 1-->
+        <doms.ingester.vhsclip>doms-ingester-vhsclip</doms.ingester.vhsclip>
+        <!--script 2-->
+        <doms.ingester.vhsfile>doms-ingester-vhsfile</doms.ingester.vhsfile>
+
+        <!--Project and shell script-->
+        <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
+
+
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!--IntegrationTest-->
 
+        <!--IntegrationTest-->
         <integrationtest.host>canopus</integrationtest.host>
         <integrationtest.username>yousee</integrationtest.username>
         <integrationtest.keyFile>${env.passwordlessKey}</integrationtest.keyFile>
@@ -77,7 +89,7 @@
         <!--Yousee Doms Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
-            <artifactId>${doms.ingester}</artifactId>
+            <artifactId>${doms.ingester.project}</artifactId>
             <version>0.1.6-SNAPSHOT</version>
             <classifier>bundle</classifier>
             <type>zip</type>
