@@ -27,7 +27,7 @@
 
         <workflow.dependencies.dir>workflowDependencies</workflow.dependencies.dir>
         <workflow.dir>taverna</workflow.dir>
-        <workflow.config>${install.config.dir}/youseeingestworkflow</workflow.config>
+        <workflow.config>${install.config.dir}/vhsfileingestworkflow</workflow.config>
 
 
         <!--Shorthand-->
@@ -100,7 +100,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${ffprobe.characteriser}</artifactId>
-            <version>0.8</version>
+            <version>0.12</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
@@ -213,7 +213,7 @@
                                     <target>
                                         <sshexec host="${integrationtest.host}"
                                                  username="${integrationtest.username}"
-                                                 keyfile="${integrationtest.keyFile"
+                                                 keyfile="${integrationtest.keyFile}"
                                                  command="${integrationtest.workflowdir}/integrationTests/runIntegrationTests.sh"
                                                  failonerror="true">
                                         </sshexec>
