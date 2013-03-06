@@ -17,7 +17,7 @@ NAME=$(basename $0 .sh)
 
 source env.sh
 
-APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester}"
+APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.vhsfile}"
 
 cd $WD
 
