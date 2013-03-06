@@ -49,7 +49,7 @@
         <!--script 1-->
         <doms.ingester.vhsclip>doms-ingester-vhsclip</doms.ingester.vhsclip>
         <!--script 2-->
-        <doms.ingester.vhsfile>doms-ingester-vhsfile</doms.ingester.vhsfile>
+        <doms.ingester.vhsfile>vhs-doms-ingester</doms.ingester.vhsfile>
 
         <!--Project and shell script-->
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
@@ -92,10 +92,19 @@
             <type>zip</type>
         </dependency>
 
-        <!--Yousee Doms Ingester-->
+        <!--RadioTV Doms Ingester-->
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${doms.ingester.project}</artifactId>
+            <version>0.1.6-SNAPSHOT</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>
+
+        <!--VHS file Doms Ingester-->
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${doms.ingester.vhsfile}</artifactId>
             <version>0.1.6-SNAPSHOT</version>
             <classifier>bundle</classifier>
             <type>zip</type>

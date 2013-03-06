@@ -111,6 +111,40 @@
             <scope>runtime</scope>
         </dependencySet>
 
+<dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${install.components.dir}/${doms.ingester.vhsfile}/external-products</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <excludes>
+                    <exclude>${doms.ingester.vhsfile}-*.jar</exclude>
+                </excludes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${doms.ingester.vhsfile}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${install.components.dir}/${doms.ingester.vhsfile}/bin</outputDirectory>
+            <directoryMode>0744</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <includes>
+                    <include>${doms.ingester.vhsfile}-*.jar</include>
+                </includes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${doms.ingester.vhsfile}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
     </dependencySets>
 
     <fileSets>
