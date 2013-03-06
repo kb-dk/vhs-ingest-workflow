@@ -194,6 +194,22 @@
             <filtered>true</filtered>
         </file>
 
+        <file>
+            <source>src/main/scripts/workflow.completed.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${workflow.completed}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/workflow.started.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${workflow.started}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
+
+
     </files>
 
 </assembly>
