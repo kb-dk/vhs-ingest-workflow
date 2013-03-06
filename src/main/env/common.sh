@@ -1,5 +1,50 @@
 #!/bin/bash
 
+
+STATE_FAILED="Failed"
+STATE_COMPLETED="Completed"
+STATE_STARTED="Started"
+STATE_DONE="Done"
+STATE_STOPPED="Stopped"
+STATE_RESTARTED="Restarted"
+STATE_QUEUED="Queued"
+
+
+function reportWorkflowCompleted(){
+    local ENTITY="$1"
+    shift
+    report "${workflow.name}" "$STATE_DONE" "$ENTITY" "$*"
+}
+
+#Mainly because when we start, we should overwrite restarted states.
+function reportWorkflowStarted(){
+    local ENTITY="$1"
+
+    local STATEBLOB="<state><component>${workflow.name}</component><stateName>$STATE_STARTED</stateName></state>"
+
+    local RESULT
+    local RETURNCODE
+
+    local PRESERVEDSTATES="preservedStates=$STATE_STOPPED"
+
+    RESULT=`echo "$STATEBLOB" \
+       | curl -s -i -H 'Content-Type: text/xml' -H 'Accept: application/json' -d@- \
+          "$STATEMONTITORSERVER/states/$ENTITY?$PRESERVEDSTATES"`
+    RETURNCODE="$?"
+    if [ "$RETURNCODE" -ne 0 ]; then
+        error "$ENTITY" "Failed to communicate with state monitor" "$RESULT"
+        exit $RETURNCODE
+    fi
+    echo "$RESULT" | grep "\"stateName\":\"\($STATE_STOPPED\)\""
+    RETURNCODE="$?"
+    if [ "$RETURNCODE" -eq 0 ]; then
+        inf "$ENTITY" "Stopped processing due to file having been marked as $STATE_STOPPED"
+        exit 127
+    fi
+    return 0
+}
+
+
 function report(){
     local COMPONENT="$1"
     shift
@@ -10,7 +55,7 @@ function report(){
     local MESSAGE="$*"
 
     if [ -n "$MESSAGE" ]; then
-        MESSAGE=${MESSAGE:0:254}
+        MESSAGE="${MESSAGE:0:254}"/
         MESSAGE=`echo -e "<message><![CDATA[""$MESSAGE""]]></message>"`
     else
         MESSAGE=""
@@ -18,15 +63,28 @@ function report(){
     local STATE="<stateName>$STATE</stateName>"
     local COMPONENT="<component>$COMPONENT</component>"
     local STATEBLOB="<state>$COMPONENT$STATE$MESSAGE</state>"
-    if [ -n $STATEMONTITORSERVER ]; then
+
+    local RESULT
+    local RETURNCODE
+
+    local PRESERVEDSTATES="preservedStates=$STATE_STOPPED&preservedStates=$STATE_RESTARTED&preservedStates=$STATE_FAILED"
+
+
+    if [ -n "$STATEMONTITORSERVER" ]; then
         local RESULT=`echo "$STATEBLOB" \
-        | curl -s -i -H 'Content-Type: text/xml' -H 'Accept: application/json' -d@- \
-          $STATEMONTITORSERVER/states/$ENTITY?preservedStates=Stopped&preservedStates=Restarted`
+               | curl -s -i -H 'Content-Type: text/xml' -H 'Accept: application/json' -d@- \
+                  "$STATEMONTITORSERVER/states/$ENTITY?$PRESERVEDSTATES"`
 #        debug "$ENTITY" "$RESULT"
-        local RETURNCODE
+        RETURNCODE="$?"
         echo "$RESULT" | grep '"stateName":"\(Stopped\|Restarted\)"'
+        if [ "$RETURNCODE" -ne 0 ]; then
+            error "$ENTITY" "Failed to communicate with state monitor" "$RESULT"
+            exit $RETURNCODE
+        fi
+        echo "$RESULT" | grep "\"stateName\":\"\($STATE_STOPPED\|$STATE_RESTARTED\)\""
         RETURNCODE="$?"
         if [ "$RETURNCODE" -eq 0 ]; then
+            inf "$ENTITY" "Stopped processing due to file having been marked as $STATE_STOPPED, $STATE_RESTARTED or $STATE_FAILED"
             exit 127
         fi
 
@@ -50,10 +108,13 @@ function execute() {
     pushd "$WORKINGDIR" > /dev/null
 
     local tempfile="`mktemp`"
+    chmod +r "$tempfile"
     local OUTPUT
     local RETURNCODE
-    OUTPUT="`$CMD 2> $tempfile`"
+    #local TIMEBEFORE=$(date +%s)
+    OUTPUT=$($CMD 2> "$tempfile")
     RETURNCODE="$?"
+    #local TIMEAFTER=$(date +%s)
 
     popd > /dev/null
 
