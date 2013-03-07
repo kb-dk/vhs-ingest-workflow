@@ -51,6 +51,8 @@
         <!--script 2-->
         <doms.ingester.vhsfile>vhs-doms-ingester</doms.ingester.vhsfile>
 
+        <radiotv.doms.metadata.packager>broadcastMetadata-packager</radiotv.doms.metadata.packager>
+
         <!--Project and shell script-->
         <ffprobe.characteriser>ffprobe-characteriser</ffprobe.characteriser>
 
@@ -114,6 +116,15 @@
             <groupId>${medieplatform}</groupId>
             <artifactId>${ffprobe.characteriser}</artifactId>
             <version>0.12</version>
+            <classifier>bundle</classifier>
+            <type>zip</type>
+        </dependency>
+
+        <!-- RadioTV Metadata packager-->
+        <dependency>
+            <groupId>${medieplatform}</groupId>
+            <artifactId>${radiotv.doms.metadata.packager}</artifactId>
+            <version>0.1.4</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>

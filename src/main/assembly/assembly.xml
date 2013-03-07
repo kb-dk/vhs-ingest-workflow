@@ -111,7 +111,7 @@
             <scope>runtime</scope>
         </dependencySet>
 
-<dependencySet>
+        <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${doms.ingester.vhsfile}/external-products</outputDirectory>
             <directoryMode>0744</directoryMode>
@@ -141,6 +141,39 @@
             </unpackOptions>
             <includes>
                 <include>${medieplatform}:${doms.ingester.vhsfile}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${install.components.dir}/${radiotv.doms.metadata.packager}/external-products</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <excludes>
+                    <exclude>${radiotv.doms.metadata.packager}-*.jar</exclude>
+                </excludes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${radiotv.doms.metadata.packager}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${install.components.dir}/${radiotv.doms.metadata.packager}/bin</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <unpackOptions>
+                <includes>
+                    <include>${radiotv.doms.metadata.packager}-*.jar</include>
+                </includes>
+            </unpackOptions>
+            <includes>
+                <include>${medieplatform}:${radiotv.doms.metadata.packager}</include>
             </includes>
             <scope>runtime</scope>
         </dependencySet>
@@ -242,7 +275,13 @@
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
-
+        <file>
+            <source>src/main/scripts/radiotv.doms.metadata.packager.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${radiotv.doms.metadata.packager}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
 
     </files>
 
