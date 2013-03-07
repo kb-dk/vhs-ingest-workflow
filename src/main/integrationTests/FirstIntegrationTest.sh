@@ -11,9 +11,7 @@ cd ..
 "-inputvalue" "vhslabel" "foobarbaz" \
 "-inputvalue" "starttime" "2006-06-29T22:05:56" \
 "-inputvalue" "stoptime" "2006-06-30T03:49:45" \
-"-inputvalue" "channelid" "dr2" \
 "-inputvalue" "quality" "6" \
-"-inputvalue" "recorder" "jukebox1" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass" 
 
