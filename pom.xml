@@ -56,7 +56,7 @@
 
         <workflow.completed>workflow-completed</workflow.completed>
 
-        <workflow.started>workflow-completed</workflow.started>
+        <workflow.started>workflow-started</workflow.started>
 
         <!--workflow name for state monitor-->
         <workflow.name>${project.artifactId}</workflow.name>

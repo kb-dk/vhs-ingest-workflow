@@ -12,8 +12,23 @@ STATE_QUEUED="Queued"
 
 function reportWorkflowCompleted(){
     local ENTITY="$1"
-    shift
-    report "${workflow.name}" "$STATE_DONE" "$ENTITY" "$*"
+
+    local STATEBLOB="<state><component>${workflow.name}</component><stateName>$STATE_DONE</stateName></state>"
+
+    local RESULT
+    local RETURNCODE
+
+    RESULT=`echo "$STATEBLOB" \
+       | curl -s -i -H 'Content-Type: text/xml' -H 'Accept: application/json' -d@- \
+          "$STATEMONTITORSERVER/states/$ENTITY"`
+    RETURNCODE="$?"
+    if [ "$RETURNCODE" -ne 0 ]; then
+        error "$ENTITY" "Failed to communicate with state monitor" "$RESULT"
+        exit $RETURNCODE
+    fi
+
+    return 0
+
 }
 
 #Mainly because when we start, we should overwrite restarted states.
@@ -25,22 +40,15 @@ function reportWorkflowStarted(){
     local RESULT
     local RETURNCODE
 
-    local PRESERVEDSTATES="preservedStates=$STATE_STOPPED"
-
     RESULT=`echo "$STATEBLOB" \
        | curl -s -i -H 'Content-Type: text/xml' -H 'Accept: application/json' -d@- \
-          "$STATEMONTITORSERVER/states/$ENTITY?$PRESERVEDSTATES"`
+          "$STATEMONTITORSERVER/states/$ENTITY"`
     RETURNCODE="$?"
     if [ "$RETURNCODE" -ne 0 ]; then
         error "$ENTITY" "Failed to communicate with state monitor" "$RESULT"
         exit $RETURNCODE
     fi
-    echo "$RESULT" | grep "\"stateName\":\"\($STATE_STOPPED\)\""
-    RETURNCODE="$?"
-    if [ "$RETURNCODE" -eq 0 ]; then
-        inf "$ENTITY" "Stopped processing due to file having been marked as $STATE_STOPPED"
-        exit 127
-    fi
+
     return 0
 }
 
@@ -81,10 +89,10 @@ function report(){
             error "$ENTITY" "Failed to communicate with state monitor" "$RESULT"
             exit $RETURNCODE
         fi
-        echo "$RESULT" | grep "\"stateName\":\"\($STATE_STOPPED\|$STATE_RESTARTED\)\""
+        echo "$RESULT" | grep "\"stateName\":\"\($STATE_STOPPED\|$STATE_RESTARTED\|$STATE_FAILED\)\""
         RETURNCODE="$?"
         if [ "$RETURNCODE" -eq 0 ]; then
-            inf "$ENTITY" "Stopped processing due to file having been marked as $STATE_STOPPED, $STATE_RESTARTED or $STATE_FAILED"
+            warn "$ENTITY" "Stopped processing due to file having been marked as $STATE_STOPPED, $STATE_RESTARTED or $STATE_FAILED"
             exit 127
         fi
 

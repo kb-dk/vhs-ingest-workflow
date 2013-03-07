@@ -10,7 +10,7 @@ NAME=$(basename $0 .sh)
 source env.sh
 
 
-OUTPUT="`reportWorkflowCompleted "$ENTITY" "Workflow completed successfully"`"
+OUTPUT="`reportWorkflowCompleted "$ENTITY" `"
 RETURNCODE=$?
 echo "$OUTPUT"
 exit "$RETURNCODE"

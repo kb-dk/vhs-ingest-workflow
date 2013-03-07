@@ -11,7 +11,7 @@ source env.sh
 
 
 
-OUTPUT="`reportWorkflowStarted "$ENTITY" "Workflow started"`"
+OUTPUT="`reportWorkflowStarted "$ENTITY"`"
 RETURNCODE=$?
 echo "$OUTPUT"
 exit "$RETURNCODE"
