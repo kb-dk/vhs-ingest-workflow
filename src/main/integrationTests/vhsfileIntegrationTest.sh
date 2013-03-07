@@ -7,7 +7,7 @@ echo "This tests just ensures that at least one file makes it through the workfl
 
 
 cd ..
-./bin/runWorkflow.sh "-inputvalue" "mpgfile" "/home/yousee/scratch/vhstestfiles/Deadline_18_2_2005_18_1.mpeg" \
+./bin/ingestVHSFile.sh "-inputvalue" "mpgfile" "/home/yousee/scratch/vhstestfiles/Deadline_18_2_2005_18_1.mpeg" \
 "-inputvalue" "vhslabel" "foobarbaz" \
 "-inputvalue" "starttime" "2006-06-29T22:05:56" \
 "-inputvalue" "stoptime" "2006-06-30T03:49:45" \

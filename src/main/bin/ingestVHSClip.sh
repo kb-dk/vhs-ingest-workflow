@@ -3,8 +3,8 @@
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))
 
-if [ -r setenv.sh ]; then
-    source setenv.sh
+if [ -r setIngestVHSFileEnv.sh ]; then
+    source setIngestVHSFileEnv.sh
 fi
 
 
