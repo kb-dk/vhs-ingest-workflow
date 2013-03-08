@@ -3,8 +3,8 @@
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))
 
-if [ -r setIngestVHSFileEnv.sh ]; then
-    source setIngestVHSFileEnv.sh
+if [ -r setIngestVHSClipEnv.sh ]; then
+    source setIngestVHSClipEnv.sh
 fi
 
 
@@ -29,15 +29,12 @@ if [ -z "$VHSINGEST_WORKFLOW_CONFIG" ]; then
    exit 1
 fi
 
-
-
-
 cd $WD
 mkdir -p $VHSINGEST_LOGS
 mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
 
-$TAVERNA_HOME/executeworkflow.sh -inmemory "$@" "$VHSINGEST_WORKFLOWS/vhsfileingest.t2flow"
+$TAVERNA_HOME/executeworkflow.sh -inmemory "$@" "$VHSINGEST_WORKFLOWS/vhsclipingest.t2flow"
 
 exit 0
 

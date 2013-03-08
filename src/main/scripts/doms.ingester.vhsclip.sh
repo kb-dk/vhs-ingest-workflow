@@ -2,21 +2,21 @@
 
 SCRIPT_PATH=$(dirname $(readlink -f $0))
 
-ENTITY=$1
-REMOTEURL=$2
-CHECKSUM=$3
-FFPROBEPROFILE_LOCATION=$4
-FFPROBEERROR_LOCATION=$5
-METADATA_LOCATION=$5
-USERNAME=$6
-PASSWORD=$7
-PID=$8
+ENTITY="$1"
+REMOTEURL="$2"
+CHECKSUM="$3"
+FFPROBEPROFILE_LOCATION="$4"
+FFPROBEERROR_LOCATION="$5"
+METADATA_LOCATION="$6"
+USERNAME="$7"
+PASSWORD="$8"
+PID="$9"
 
 NAME=$(basename $0 .sh)
 
 source "$SCRIPT_PATH/env.sh"
 
-APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.vhsclip}"
+APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.project}"
 
 #CMD="echo {\"domsPid\": \"uuid:9dabe130-f1d9-11e1-aff1-0800200c9a66\"}"
 CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname $CONFIGFILE) \

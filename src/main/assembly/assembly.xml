@@ -282,7 +282,13 @@
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
-
+        <file>
+            <source>src/main/scripts/program.metadata.extractor.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${program.metadata.extractor}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
     </files>
 
 </assembly>
