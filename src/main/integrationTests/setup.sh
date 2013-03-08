@@ -3,7 +3,7 @@
 cd $(dirname $(readlink -f $0))
 
 echo "Running setup"
-source setenv.sh
+source setupSetenv.sh
 pushd . > /dev/null
 cd $VHSINGEST_CONFIG
 git pull

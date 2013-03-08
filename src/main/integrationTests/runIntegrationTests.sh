@@ -4,8 +4,6 @@ cd $(dirname $(readlink -f $0))
 
 echo "Running the suite of integration tests"
 
-source setenv.sh
-
 for test in *Test.sh; do
     echo ""
     ./setup.sh

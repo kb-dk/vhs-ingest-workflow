@@ -2,6 +2,8 @@
 
 cd $(dirname $(readlink -f $0))
 
+source vhsfileintegrationTestSetEnv.sh
+
 echo "Running the first integration test."
 echo "This tests just ensures that at least one file makes it through the workflow"
 

@@ -3,9 +3,7 @@ export JAVA_HOME="/usr/java/jdk1.6.0_32"
 
 export VHSINGEST_HOME="$HOME/vhs-ingest-workflow/services/workflow"
 export VHSINGEST_CONFIG="${install.config.dir}"
-export VHSINGEST_WORKFLOW_CONFIG="${workflow.config}"
-
-
+export VHSINGEST_WORKFLOW_CONFIG="${vhsfile.workflow.config}"
 
 export VHSINGEST_LOGS="${install.home.dir}/${install.logs.dir}"
 export VHSINGEST_LOCKS="${install.home.dir}/${install.locks.dir}"

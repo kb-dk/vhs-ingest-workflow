@@ -27,7 +27,8 @@
 
         <workflow.dependencies.dir>workflowDependencies</workflow.dependencies.dir>
         <workflow.dir>taverna</workflow.dir>
-        <workflow.config>${install.config.dir}/vhsfileingestworkflow</workflow.config>
+        <vhsfile.workflow.config>${install.config.dir}/vhsfileingestworkflow</vhsfile.workflow.config>
+        <vhsclip.workflow.config>${install.config.dir}/vhsclipingestworkflow</vhsclip.workflow.config>
 
 
         <!--Shorthand-->
@@ -50,6 +51,8 @@
         <doms.ingester.vhsclip>doms-ingester-vhsclip</doms.ingester.vhsclip>
         <!--script 2-->
         <doms.ingester.vhsfile>vhs-doms-ingester</doms.ingester.vhsfile>
+
+        <program.metadata.extractor>program-metadata-extractor</program.metadata.extractor>
 
         <radiotv.doms.metadata.packager>broadcastMetadata-packager</radiotv.doms.metadata.packager>
 
