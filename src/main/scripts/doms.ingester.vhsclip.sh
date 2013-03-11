@@ -1,6 +1,7 @@
 #!/bin/bash
 
-SCRIPT_PATH=$(dirname $(readlink -f $0))
+WD=$(pwd)
+cd $(dirname $(readlink -f $0))
 
 ENTITY="$1"
 REMOTEURL="$2"
@@ -14,8 +15,9 @@ PID="$9"
 
 NAME=$(basename $0 .sh)
 
-source "$SCRIPT_PATH/env.sh"
+source "env.sh"
 
+cd $WD
 APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.project}"
 
 #CMD="echo {\"domsPid\": \"uuid:9dabe130-f1d9-11e1-aff1-0800200c9a66\"}"
