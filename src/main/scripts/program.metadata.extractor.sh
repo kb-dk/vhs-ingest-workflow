@@ -1,22 +1,26 @@
 #!/bin/bash
 
-PID="$1"
+FILENAME="$1"
+PID="$2"
 DATASTREAM="PROGRAM_BROADCAST"
-DOMSUSER="$2"
-DOMSPASS="$3"
+DOMSUSER="$3"
+DOMSPASS="$4"
 
-#Get the doms ingesters properties
-source "$VHSINGEST_WORKFLOW_CONFIG/combinedProperties.sh"
+SCRIPT_PATH=$(dirname $(readlink -f $0))
 
-CONFIGNAME="${doms.ingester.vhsclip}"
-CONFIGNAME="${CONFIGNAME//[\- _]/}"
-CONFIGNAME=$(echo $CONFIGNAME | tr '[A-Z]' '[a-z]')
-CONFIGNAME="${CONFIGNAME}Config"
-DOMS_CONFIG="${!CONFIGNAME}"
+NAME="${doms.ingester.vhsclip}"
+source "$SCRIPT_PATH/env.sh"
 
 # it is assumed that fedorawebserviceurl is of the form:
 # http://localhost:7880/centralWebservice-service/central/?wsdl
-DOMSURL=$(cat "$DOMS_CONFIG" | grep "dk.statsbiblioteket.doms.fedorawebserviceurl"  | cut -d'=' -f2 | cut -d'/' -f1,2,3,4)
+DOMSURL=$(cat "$CONFIGFILE" | grep "dk.statsbiblioteket.doms.fedorawebserviceurl"  | cut -d'=' -f2 | cut -d'/' -f1,2,3,4)
 DOMSURL="${DOMSURL}/rest/objects/${PID}/datastreams/${DATASTREAM}"
 
-curl --user "$DOMSUSER:$DOMSPASS" "$DOMSURL"
+NAME=$(basename $0 .sh)
+
+CMD="curl --user $DOMSUSER:$DOMSPASS $DOMSURL"
+OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$FILENAME"`"
+RETURNCODE=$?
+echo "$OUTPUT"
+exit "$RETURNCODE"
+
