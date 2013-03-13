@@ -2,8 +2,8 @@
 
 cd $(dirname $(readlink -f $0))
 
-if [ -r setenv.sh ]; then
-    source setenv.sh
+if [ -r commonEnv.sh ]; then
+    source commonEnv.sh
 fi
 
 

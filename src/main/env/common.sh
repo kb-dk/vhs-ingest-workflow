@@ -12,8 +12,19 @@ STATE_QUEUED="Queued"
 
 function reportWorkflowCompleted(){
     local ENTITY="$1"
+    shift
+    local MESSAGE="$*"
 
-    local STATEBLOB="<state><component>${workflow.name}</component><stateName>$STATE_DONE</stateName></state>"
+    if [ -n "$MESSAGE" ]; then
+        MESSAGE="${MESSAGE:0:254}"/
+        MESSAGE=`echo -e "<message><![CDATA[""$MESSAGE""]]></message>"`
+    else
+        MESSAGE=""
+    fi
+
+    local STATE="<stateName>$STATE_DONE</stateName>"
+    local COMPONENT="<component>${workflow.name}</component>"
+    local STATEBLOB="<state>$COMPONENT$STATE$MESSAGE</state>"
 
     local RESULT
     local RETURNCODE
