@@ -101,7 +101,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${doms.ingester.project}</artifactId>
-            <version>0.1.6-SNAPSHOT</version>
+            <version>0.1.6</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
@@ -110,7 +110,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${doms.ingester.vhsfile}</artifactId>
-            <version>0.1.6-SNAPSHOT</version>
+            <version>0.1.6</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
@@ -127,7 +127,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${radiotv.doms.metadata.packager}</artifactId>
-            <version>0.1.4</version>
+            <version>0.1.6</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
