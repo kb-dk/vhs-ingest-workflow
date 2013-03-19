@@ -136,7 +136,7 @@
         <dependency>
             <groupId>${medieplatform}</groupId>
             <artifactId>${bitrepository.ingester}</artifactId>
-            <version>0.5</version>
+            <version>0.7</version>
             <classifier>bundle</classifier>
             <type>zip</type>
         </dependency>
