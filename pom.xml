@@ -76,10 +76,13 @@
         <integrationtest.keyFile>${env.passwordlessKey}</integrationtest.keyFile>
         <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
         <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
-
-
-
     </properties>
+
+    <scm>
+        <connection>scm:git:git@github.com:statsbiblioteket/vhs-ingest-workflow.git</connection>
+        <url>scm:git:git@github.com:statsbiblioteket/vhs-ingest-workflow.git</url>
+        <developerConnection>scm:git:git@github.com:statsbiblioteket/vhs-ingest-workflow.git</developerConnection>
+    </scm>
 
     <dependencies>
        <dependency>
