@@ -8,7 +8,7 @@ echo "Running the vhs clip integration test."
 echo "This tests just ensures that at least one file makes it through the workflow"
 
 cd ..
-./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/yousee/scratch/vhstestfiles/Klip_17_2_2005_15_56.mpeg" \
+./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/Klip_17_2_2005_15_56.mpeg" \
 "-inputvalue" "programPid" "uuid:ee69215e-57f9-4fc8-b1f0-913a6d4844eb" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass" 
