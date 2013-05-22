@@ -289,6 +289,13 @@
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
+        <file>
+            <source>src/main/scripts/file.copier.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${file.copier}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
     </files>
 
 </assembly>

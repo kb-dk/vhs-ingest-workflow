@@ -34,6 +34,9 @@
         <!--Shorthand-->
         <medieplatform>dk.statsbiblioteket.medieplatform</medieplatform>
 
+	<!-- file copier -->
+        <file.copier>file-copier</file.copier>
+
         <!--maven package name-->
         <bitrepository.ingester>yousee-bitrepository-ingester</bitrepository.ingester>
         <!--shellscript name-->
@@ -72,7 +75,7 @@
 
         <!--IntegrationTest-->
         <integrationtest.host>canopus</integrationtest.host>
-        <integrationtest.username>yousee</integrationtest.username>
+        <integrationtest.username>tvtape</integrationtest.username>
         <integrationtest.keyFile>${env.passwordlessKey}</integrationtest.keyFile>
         <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
         <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
