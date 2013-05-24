@@ -4,12 +4,14 @@
 cd $(dirname $(readlink -f $0))
 
 ENTITY="$1"
-MESSAGE="$2"
+FILE="$2"
+MESSAGE="$3"
 
 NAME=$(basename $0 .sh)
 
 source env.sh
 
+rm "$FILE"
 
 OUTPUT="`reportWorkflowCompleted "$ENTITY" "$MESSAGE"`"
 RETURNCODE=$?

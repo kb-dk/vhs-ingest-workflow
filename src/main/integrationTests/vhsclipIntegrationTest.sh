@@ -8,8 +8,8 @@ echo "Running the vhs clip integration test."
 echo "This tests just ensures that at least one file makes it through the workflow"
 
 cd ..
-./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/Klip_17_2_2005_15_56.mpeg" \
-"-inputvalue" "programPid" "uuid:ee69215e-57f9-4fc8-b1f0-913a6d4844eb" \
+./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/localhost/Klip_18_2_2005_15_56.mpeg" \
+"-inputvalue" "programPid" "uuid:4b48d89f-741a-498e-92f1-0b39ea2eef4b" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass" 
 
@@ -25,3 +25,7 @@ if [ "$COUNT" -gt "0" ]; then
 else
     exit 1;
 fi
+
+
+#"-inputvalue" "programPid" "uuid:ee69215e-57f9-4fc8-b1f0-913a6d4844eb" \
+

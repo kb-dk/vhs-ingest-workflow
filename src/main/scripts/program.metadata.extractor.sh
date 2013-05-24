@@ -13,8 +13,9 @@ source "$SCRIPT_PATH/env.sh"
 
 # it is assumed that fedorawebserviceurl is of the form:
 # http://localhost:7880/centralWebservice-service/central/?wsdl
-DOMSURL=$(cat "$CONFIGFILE" | grep "dk.statsbiblioteket.doms.fedorawebserviceurl"  | cut -d'=' -f2 | cut -d'/' -f1,2,3,4)
-DOMSURL="${DOMSURL}/rest/objects/${PID}/datastreams/${DATASTREAM}"
+DOMSURL=$(cat "$CONFIGFILE" | grep "dk.statsbiblioteket.doms.fedorawebserviceurl"  | cut -d'=' -f2 | cut -d'/' -f1,2,3)
+DOMSURL="${DOMSURL}/fedora/objects/${PID}/datastreams/${DATASTREAM}/content"
+#DOMSURL="${DOMSURL}/rest/objects/${PID}/datastreams/${DATASTREAM}"
 
 NAME=$(basename $0 .sh)
 
