@@ -11,7 +11,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${workflow.dependencies.dir}</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>true</useTransitiveDependencies>
             <useTransitiveFiltering>true</useTransitiveFiltering>
             <includes>
@@ -23,7 +23,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${ffprobe.characteriser}/bin</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
@@ -35,7 +35,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${profile.validator}/bin</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <includes>
@@ -80,7 +80,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${doms.ingester.project}/external-products</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -97,7 +97,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${doms.ingester.project}/bin</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -114,7 +114,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${doms.ingester.vhsfile}/external-products</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -131,7 +131,7 @@
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${doms.ingester.vhsfile}/bin</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <useTransitiveDependencies>false</useTransitiveDependencies>
             <unpack>true</unpack>
             <unpackOptions>
@@ -184,42 +184,42 @@
         <fileSet>
             <outputDirectory>${install.bin.dir}</outputDirectory>
             <directory>src/main/bin</directory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>integrationTests</outputDirectory>
             <directory>src/main/integrationTests</directory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <directory>src/main/env</directory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
         <fileSet>
             <outputDirectory>${install.components.dir}</outputDirectory>
             <directory>src/main/components</directory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </fileSet>
 
         <fileSet>
             <outputDirectory>${workflow.dir}</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <directory>src/main/taverna</directory>
             <filtered>true</filtered>
         </fileSet>
 
         <fileSet>
             <outputDirectory>examples</outputDirectory>
-            <directoryMode>0744</directoryMode>
+            <directoryMode>0755</directoryMode>
             <directory>src/main/examples</directory>
         </fileSet>
     </fileSets>
