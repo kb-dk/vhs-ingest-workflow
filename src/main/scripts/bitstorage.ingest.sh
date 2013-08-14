@@ -4,7 +4,7 @@
 cd $(dirname $(readlink -f $0))
 
 ENTITY="$1"
-LOCALFILEURL="$2"
+LOCALFILEURL="file://$2"
 
 LOCALFILE=$(echo "$LOCALFILEURL" | sed -e 's/file:\/\///g')
 REMOTEFILEID=$(echo "$LOCALFILEURL" | sed -e 's/file:\/\///g' | xargs basename)
@@ -17,9 +17,9 @@ source env.sh
 
 APPDIR="$VHSINGEST_COMPONENTS/${bitrepository.ingester}"
 
-# dk.statsbiblioteket.medieplatform.bitrepository.ingester.Ingester \
+# dk.statsbiblioteket.medieplatform.bitrepository.ingester.TheMockClient \
 CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/* \
-dk.statsbiblioteket.medieplatform.bitrepository.ingester.TheMockClient \
+dk.statsbiblioteket.medieplatform.bitrepository.ingester.Ingester \
 $CONFIGFILE $LOCALFILEURL $REMOTEFILEID $CHECKSUM $FILESIZE"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
