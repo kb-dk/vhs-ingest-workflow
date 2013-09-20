@@ -21,7 +21,7 @@ source $SCRIPT_PATH/env.sh
 
 APPDIR="$VHSINGEST_COMPONENTS/${radiotv.doms.metadata.packager}"
 
-CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname $CONFIGFILE) \
+CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/* \
  dk.statsbiblioteket.doms.radiotv.PackageForDoms \
  --channelID=$CHANNELID \
  --format=$FORMATNAME \

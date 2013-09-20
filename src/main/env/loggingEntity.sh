@@ -59,7 +59,7 @@ log() {
 	fi
 	lockfile "$LOCKFILE"
         if [ $verbosity -ge $loglevel ]; then
-            # Expand escaped characters, wrap at 70 chars, indent wrapped lines
+            # Expand escaped characters
             echo -e "`date +'%b %d %H:%M:%S'`" "`hostname`" "`basename $0`[$$]" "$message" | sed '2~1s/^/  /' >> "$LOGDIR/$logfile.log"
         fi
 	rm -f "$LOCKFILE"
