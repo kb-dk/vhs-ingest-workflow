@@ -1,3 +1,4 @@
+#!/bin/sh
 #export VHSINGEST_CONFIG="$HOME/ingester-workflow/vhs-ingest-config/"
 #export VHSINGEST_HOME="$HOME/ingester-workflow/vhs-ingest-workflow/"
 export TAVERNA_HOME="$HOME/tools/taverna-workbench-2.4.0"
