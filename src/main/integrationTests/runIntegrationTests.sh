@@ -4,7 +4,7 @@ cd $(dirname $(readlink -f $0))
 
 echo "Running the suite of integration tests"
 
-for test in *Test.sh; do
+for test in vhsfileIntegrationTest.sh; do
     echo ""
     ./setup.sh
     ./$test
