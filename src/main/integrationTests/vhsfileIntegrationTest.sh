@@ -11,8 +11,9 @@ source "/opt/ffmpeg26/enable"
 which ffmpeg
 
 cd ..
-./bin/ingestVHSFile.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/localhost/Colossus_20140923_1039.ts" \
+./bin/ingestVHSFile.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/localhost/Colossus_20140923_1039.ts" \
 "-inputvalue" "vhslabel" "foobarbaz" \
+"-inputvalue" "vhsfilechecksum" "da974cfff522451ecb578f75efa9c5dc" \
 "-inputvalue" "starttime" "2006-06-29T22:05:56" \
 "-inputvalue" "stoptime" "2006-06-30T03:49:45" \
 "-inputvalue" "quality" "6" \
