@@ -1,3 +1,4 @@
+#!/bin/sh
 export TAVERNA_HOME="$HOME/taverna/taverna-workbench-2.4.0"
 export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
 export VHSINGEST_HOME="$HOME/vhs-ingest-workflow/services/workflow"
