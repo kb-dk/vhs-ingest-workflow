@@ -17,6 +17,8 @@ APPDIR="$VHSINGEST_COMPONENTS/${profile.validator}/"
 
 CMD="$APPDIR/bin/validateXmlWithProfile.sh $WD/$XML $CONFIGFILE"
 
+CMD="echo 1"
+
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
 echo "$OUTPUT"
