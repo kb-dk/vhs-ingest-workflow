@@ -11,7 +11,7 @@ NAME=$(basename $0 .sh)
 
 source env.sh
 
-rm "$FILE"
+#rm "$FILE"
 
 OUTPUT="`reportWorkflowCompleted "$ENTITY" "$MESSAGE"`"
 RETURNCODE=$?

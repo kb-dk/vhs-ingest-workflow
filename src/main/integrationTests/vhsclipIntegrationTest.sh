@@ -18,7 +18,7 @@ if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
 
-COUNT=`ls -1 logs/Workflow1_output/ | grep -v \.error | wc -l`
+COUNT=`ls -1 logs/VHS_2_File_Ingest_Wo_output/ | grep -v \.error | wc -l`
 echo $COUNT;
 if [ "$COUNT" -gt "0" ]; then
     exit 0

@@ -11,17 +11,16 @@ source "/opt/ffmpeg26/enable"
 which ffmpeg
 
 cd ../..
-./bin/ingestVHS2File.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/localhost/vhs2/localhost/dr1_digivid_1301643600-2011-04-01-09.40.00_1427911200-2015-04-01-20.00.00.ts" \
-"-inputvalue" "jsonfile" "/home/tvtape/testfiles/localhost/vhs2/localhost/dr1_digivid_1301643600-2011-04-01-09.40.00_1427911200-2015-04-01-20.00.00.ts.comments" \
+./bin/ingestVHS2File.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/Colossus_20140923_1039.ts" \
+"-inputvalue" "jsonfile" "/home/tvtape/testfiles/Colossus_20140923_1039.ts.comments" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass" 
-
 RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
 
-COUNT=`ls -1 logs/Workflow1_output/ | grep -v \.error | wc -l`
+COUNT=`ls -1 logs/VHS_2_File_Ingest_Wo_output/ | grep -v \.error | wc -l`
 echo $COUNT;
 if [ "$COUNT" -gt "0" ]; then
     exit 0
