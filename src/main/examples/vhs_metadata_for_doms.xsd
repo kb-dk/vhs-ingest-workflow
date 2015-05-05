@@ -1,0 +1,41 @@
+<xs:schema xmlns:tns="http://doms.statsbiblioteket.dk/types/vhs_metadata/0/1/#" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://doms.statsbiblioteket.dk/types/vhs_metadata/0/1/#" version="1.0">
+    <xs:element name="vhs_metadata" type="tns:vhs_metadata"></xs:element>
+
+    <xs:complexType name="vhs_metadata">
+        <xs:sequence>
+            <xs:element name="channelID" type="xs:string"></xs:element>
+            <xs:element name="filename" type="xs:string"></xs:element>
+            <xs:element name="checksum" type="xs:string"></xs:element>
+            <xs:element name="recorder" type="xs:string"></xs:element>
+            <xs:element minOccurs="0" name="annotation" type="xs:string"></xs:element>
+            <xs:element name="vhs_label" type="xs:string"></xs:element>
+            <xs:element minOccurs="0" name="start_time" type="xs:dateTime"></xs:element>
+            <xs:element minOccurs="0" name="stop_time" type="xs:dateTime"></xs:element>
+            <xs:element name="quality" type="xs:int">
+                <xs:annotation>
+                    <xs:documentation>
+                        Quality indicator on the Rosenthal scale (1,...,10)
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element minOccurs="0" name="recorded_duration" type="xs:time"></xs:element>
+            <xs:group ref="tns:vhs2_metadata" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="vcr_metadata">
+        <xs:sequence>
+            <xs:element name="manufacturer" type="xs:string"/>
+            <xs:element name="model" type="xs:string"/>
+            <xs:element name="serial_number" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:group name="vhs2_metadata">
+        <xs:sequence>
+            <xs:element name="vcr_metadata" type="tns:vcr_metadata"/>
+            <xs:element name="json_original" type="xs:string" />
+        </xs:sequence>
+    </xs:group>
+
+</xs:schema>

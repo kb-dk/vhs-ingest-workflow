@@ -1,0 +1,17 @@
+<ns3:vhs_metadata xmlns:ns3="http://doms.statsbiblioteket.dk/types/vhs_metadata/0/1/#">
+    <ns3:channelID>foo</ns3:channelID>
+    <ns3:filename>bar</ns3:filename>
+    <ns3:checksum>51b4e5c9dba3d5969856c0e8871f408c</ns3:checksum>
+    <ns3:recorder>pc54321</ns3:recorder>
+    <ns3:annotation>This is nice</ns3:annotation>
+    <ns3:vhs_label>tape:75</ns3:vhs_label>
+    <ns3:start_time>2002-05-30T09:00:00</ns3:start_time>
+    <ns3:stop_time>2002-05-30T11:00:00</ns3:stop_time>
+    <ns3:quality>4</ns3:quality>
+    <ns3:vcr_metadata>
+        <ns3:manufacturer>Philips</ns3:manufacturer>
+        <ns3:model>NV1</ns3:model>
+        <ns3:serial_number>HQ567</ns3:serial_number>
+    </ns3:vcr_metadata>
+    <ns3:json_original><![CDATA[{"filename":"tvdk_digivid_1209632400-2008-05-01-11.00.00_1209636000-2008-05-01-12.00.00.ts","comments":"This\nis\nnot bad.","vhsLabel":"Pan 1","encoderName":"PC670","startDate":1209632400000,"endDate":1209636000000,"channelLabel":"tvdk","checksum":"9a40941207dc51fd4d0dbc19ce7fbeab","quality":"2"} ]]></ns3:json_original>
+</ns3:vhs_metadata>
