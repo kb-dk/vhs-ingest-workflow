@@ -22,6 +22,7 @@ APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.vhsfile}"
 
 cd $WD
 
+echo $VHSMETADATA_LOCATION
 #CMD="echo {\"domsPid\": \"uuid:9dabe130-f1d9-11e1-aff1-0800200c9a66\"}"
 CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname $CONFIGFILE) \
  dk.statsbiblioteket.doms.vhs.VHSIngesterCLI \
