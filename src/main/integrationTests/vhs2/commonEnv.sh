@@ -10,3 +10,8 @@ export VHSINGEST_SCRIPTS="${install.home.dir}/${install.script.dir}"
 export VHSINGEST_WORKFLOWS="${install.home.dir}/${workflow.dir}"
 export VHSINGEST_DEPENDENCIES="${install.home.dir}/${workflow.dependencies.dir}"
 export VHSINGEST_BIN="${install.home.dir}/${install.bin.dir}"
+
+#
+# Set this parameter when testing against a real bitmagasin (ie when bitstorage.ingest.sh specifies Ingester instead of MockIngesterClient)
+#
+export URL_PREFIX="http://canopus/cfutvdownload/"

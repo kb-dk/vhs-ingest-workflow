@@ -36,7 +36,7 @@ cd $WD
 mkdir -p $VHSINGEST_LOGS
 mkdir -p $VHSINGEST_LOCKS
 echo $JAVA_HOME
-
+echo "Logging in $VHSINGEST_LOGS"
 cd "$VHSINGEST_LOGS"
 flock $VHSINGEST_LOCKS/vhsfile.lock $TAVERNA_HOME/executeworkflow.sh -inmemory "$@" "$VHSINGEST_WORKFLOWS/vhs2fileingest.t2flow"
 
