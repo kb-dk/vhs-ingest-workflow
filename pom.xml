@@ -4,7 +4,7 @@
 
     <groupId>dk.statsbiblioteket.medieplatform</groupId>
     <artifactId>vhs-ingest-workflow</artifactId>
-    <version>0.5-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>pom</packaging>
 
 
