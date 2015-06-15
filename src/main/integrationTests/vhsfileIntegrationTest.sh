@@ -2,7 +2,7 @@
 
 cd $(dirname $(readlink -f $0))
 
-source vhsfileintegrationTestSetEnv.sh
+##source vhsfileintegrationTestSetEnv.sh
 
 echo "Running the vhs file integration test."
 echo "This tests just ensures that at least one file makes it through the workflow"
@@ -11,6 +11,8 @@ source "/opt/ffmpeg26/enable"
 which ffmpeg
 
 cd ..
+rm -r logs/*
+
 ./bin/ingestVHSFile.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/localhost/Colossus_20140923_1039.ts" \
 "-inputvalue" "vhslabel" "foobarbaz" \
 "-inputvalue" "vhsfilechecksum" "da974cfff522451ecb578f75efa9c5dc" \
@@ -25,7 +27,7 @@ if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
 
-COUNT=`ls -1 logs/VHS_2_File_Ingest_Wo_output/ | grep -v \.error | wc -l`
+COUNT=`ls -1 $VHSINGEST_LOGS | grep -v \.error | wc -l`
 echo $COUNT;
 if [ "$COUNT" -gt "0" ]; then
     exit 0

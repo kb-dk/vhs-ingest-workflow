@@ -1,3 +1,8 @@
+Version 1.1
+===========
+* Changelog now included in the release package.
+* Fixed a bug in the order of the elements in the VHS metadata.
+
 Version 1.0
 ===========
 

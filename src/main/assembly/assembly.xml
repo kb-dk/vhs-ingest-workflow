@@ -296,6 +296,9 @@
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
+        <file>
+            <source>CHANGELOG.md</source>
+        </file>
     </files>
 
 </assembly>

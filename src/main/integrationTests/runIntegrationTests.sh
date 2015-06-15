@@ -4,12 +4,9 @@ cd $(dirname $(readlink -f $0))
 
 echo "Running the suite of integration tests"
 
-for test in vhs2/vhsfileIntegrationTest.sh; do
-    echo ""
-    ./setup.sh
+for test in ./vhs2fileIntegrationTest.sh ./vhsfileIntegrationTest.sh ./vhsclipIntegrationTest.sh; do
     ./$test
     RETURNCODE="$?"
-    ./teardown.sh
     if [ "$RETURNCODE" -ne "0" ]; then
         exit "$RETURNCODE"
     fi

@@ -3,9 +3,17 @@
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))
 
-if [ -r setIngestVHSClipEnv.sh ]; then
-    source setIngestVHSClipEnv.sh
-fi
+#if [ -r setIngestVHSClipEnv.sh ]; then
+#    source setIngestVHSClipEnv.sh
+#fi
+
+source setup.infrastructure.sh
+source setup.env.sh
+export VHSINGEST_WORKFLOW_CONFIG="$VHSINGEST_CONFIG/vhsclipingestworkflow/"
+VERSION=`head -1 $TAVERNA_HOME/release-notes.txt | sed 's/.$//' | cut -d' ' -f4`
+LIB="$HOME/.taverna-$VERSION/lib/"
+mkdir -p $LIB
+
 
 
 if [ -z "$VHSINGEST_HOME" ]; then

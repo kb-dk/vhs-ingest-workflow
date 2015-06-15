@@ -51,12 +51,25 @@ done
 [ -z "$VHSFILE" ] && print_usage && exit 2
 [ -z "$JSONFILE" ] && print_usage && exit 2
 
-source $SCRIPT_PATH/setIngestVHSFileEnv.sh
-CONF=$VHSINGEST_CONFIG/startVHS2Workflow.conf
-[ -f "$CONF" ] && "Did not find config file with DOMS credentials $CONF" && exit 3
-source $CONF
+cd $SCRIPT_PATH
+source setup.infrastructure.sh
+source setup.env.sh
+export VHSINGEST_WORKFLOW_CONFIG="$VHSINGEST_CONFIG/vhsfileingestworkflow/"
 
-$SCRIPT_PATH/ingestVHS2File.sh "-inputvalue" "vhsfile" "$VHSFILE" \
+
+VERSION=`head -1 $TAVERNA_HOME/release-notes.txt | sed 's/.$//' | cut -d' ' -f4`
+LIB="$HOME/.taverna-$VERSION/lib/"
+mkdir -p $LIB
+mkdir -p $VHSINGEST_LOGS
+mkdir -p $VHSINGEST_LOCKS
+echo $JAVA_HOME
+cd "$VHSINGEST_LOGS"
+
+
+flock $VHSINGEST_LOCKS/vhsfile.lock $TAVERNA_HOME/executeworkflow.sh -inmemory "-inputvalue" "vhsfile" "$VHSFILE" \
 "-inputvalue" "jsonfile" "$JSONFILE" \
 "-inputvalue" "domsUser" "$DOMSUSER" \
-"-inputvalue" "domsPass" "$DOMSPASS"
+"-inputvalue" "domsPass" "$DOMSPASS" \
+"$VHSINGEST_WORKFLOWS/vhs2fileingest.t2flow"
+
+exit 0

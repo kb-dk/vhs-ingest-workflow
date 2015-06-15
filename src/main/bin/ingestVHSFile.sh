@@ -3,10 +3,16 @@
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))
 
-if [ -r setIngestVHSFileEnv.sh ]; then
-    source setIngestVHSFileEnv.sh
-fi
+##if [ -r setIngestVHSFileEnv.sh ]; then
+##    source setIngestVHSFileEnv.sh
+##fi
 
+source setup.infrastructure.sh
+source setup.env.sh
+export VHSINGEST_WORKFLOW_CONFIG="$VHSINGEST_CONFIG/vhsfileingestworkflow/"
+VERSION=`head -1 $TAVERNA_HOME/release-notes.txt | sed 's/.$//' | cut -d' ' -f4`
+LIB="$HOME/.taverna-$VERSION/lib/"
+mkdir -p $LIB
 
 if [ -z "$VHSINGEST_HOME" ]; then
    echo "VHSINGEST_HOME is not set. Must be set before execution. Exiting"
