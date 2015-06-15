@@ -1,11 +1,11 @@
 #!/bin/bash
+#
+# This is the entry point for ingestion of clips representing a single broadcast. It is triggered from DOMS
+# itself which calls a script vhsclip.sh which directly calls this script via ssh.
+#
 
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))
-
-#if [ -r setIngestVHSClipEnv.sh ]; then
-#    source setIngestVHSClipEnv.sh
-#fi
 
 source setup.infrastructure.sh
 source setup.env.sh

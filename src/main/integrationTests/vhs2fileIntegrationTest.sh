@@ -15,10 +15,6 @@ source "/opt/ffmpeg26/enable"
 which ffmpeg
 
 cd ..
-##./bin/ingestVHS2File.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/Colossus_20140923_1039.ts" \
-##"-inputvalue" "jsonfile" "/home/tvtape/testfiles/Colossus_20140923_1039.ts.comments" \
-##"-inputvalue" "domsUser" "fedoraAdmin" \
-##"-inputvalue" "domsPass" "fedoraAdminPass"
 
 ./bin/startVHS2Workflow.sh --vhsfile /home/tvtape/testfiles/Colossus_20140923_1039.ts --jsonfile /home/tvtape/testfiles/Colossus_20140923_1039.ts.comments
 
@@ -27,7 +23,7 @@ if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
 
-COUNT=`ls -1 logs/VHS_2_File_Ingest_Wo_output/ | grep -v \.error | wc -l`
+COUNT=`ls -1 $VHSINGEST_LOGS | grep -v \.error | wc -l`
 echo $COUNT;
 if [ "$COUNT" -gt "0" ]; then
     exit 0

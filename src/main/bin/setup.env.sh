@@ -2,7 +2,9 @@
 #
 # This file should not normally require modification
 #
-
+#SCRIPT_PATH=$(dirname $(readlink -f $0))
+SCRIPT_PATH=$(readlink -f $(dirname ${BASH_SOURCE[0]}))
+export VHSINGEST_HOME="$SCRIPT_PATH/.."
 export VHSINGEST_LOGS="$VHSINGEST_HOME/logs"
 export VHSINGEST_LOCKS="$VHSINGEST_HOME/locks"
 export VHSINGEST_COMPONENTS="$VHSINGEST_HOME/components"

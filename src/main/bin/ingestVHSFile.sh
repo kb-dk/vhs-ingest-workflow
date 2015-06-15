@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# This in the entry point for the old ingest of digitised mpeg2 files from the Hauppauge PVR card workflow.
+#
 
 WD=$(pwd)
 cd $(dirname $(readlink -f $0))

@@ -77,8 +77,8 @@
         <integrationtest.host>canopus</integrationtest.host>
         <integrationtest.username>tvtape</integrationtest.username>
         <integrationtest.keyFile>${env.passwordlessKey}</integrationtest.keyFile>
-        <integrationtest.basedir>$HOME/vhs-ingest-workflow</integrationtest.basedir>
-        <integrationtest.workflowdir>${integrationtest.basedir}/services/workflow</integrationtest.workflowdir>
+        <integrationtest.basedir>$HOME/services</integrationtest.basedir>
+        <integrationtest.workflowdir>${integrationtest.basedir}/vhs-ingest-workflow</integrationtest.workflowdir>
     </properties>
 
     <scm>
@@ -206,9 +206,9 @@
                                     <target>
 
                                         <!-- Requires that a private/public key login has been enabled for this account -->
-                                        <sshexec host="${integrationtest.host}" username="${integrationtest.username}" keyfile="${integrationtest.keyFile}" command=" cd ${integrationtest.basedir}; rm -rf vhs-ingest*; rm -rf services/*;" failonerror="true" />
+                                        <sshexec host="${integrationtest.host}" username="${integrationtest.username}" keyfile="${integrationtest.keyFile}" command=" rm -rf ${integrationtest.workflowdir}; " failonerror="true" />
                                         <scp file="${project.build.directory}/${project.build.finalName}-bundle.tar.gz" toDir="${integrationtest.username}@${integrationtest.host}:${integrationtest.basedir}" keyfile="${integrationtest.keyFile}" />
-                                        <sshexec host="${integrationtest.host}" username="${integrationtest.username}" keyfile="${integrationtest.keyFile}" command=" cd ${integrationtest.basedir}; tar xfz ${project.build.finalName}-bundle.tar.gz; mkdir ${integrationtest.workflowdir}; mv ${project.build.finalName}/* ${integrationtest.workflowdir}/;" failonerror="true" />
+                                        <sshexec host="${integrationtest.host}" username="${integrationtest.username}" keyfile="${integrationtest.keyFile}" command=" cd ${integrationtest.basedir}; tar xfz ${project.build.finalName}-bundle.tar.gz; mv ${project.build.finalName} ${integrationtest.workflowdir};" failonerror="true" />
                                         <!--Find deply folder ${project.build.outputDirectory}-->
                                         <!--unzip package-->
                                     </target>

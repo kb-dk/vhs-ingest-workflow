@@ -2,6 +2,9 @@ Version 1.1
 ===========
 * Changelog now included in the release package.
 * Fixed a bug in the order of the elements in the VHS metadata.
+* Radically simplified the script and envelope structure. The file setup.infrastructure.sh is now the only configuration file inside the deploy
+tree which may require customisation. The three "endpoints" - ingestVHSClip.sh, ingestVHSFile.sh and startVHS2Workflow.sh have not changed their
+location or usage.
 
 Version 1.0
 ===========

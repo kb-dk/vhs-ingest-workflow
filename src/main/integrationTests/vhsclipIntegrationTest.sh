@@ -2,10 +2,10 @@
 
 cd $(dirname $(readlink -f $0))
 
-##source vhsclipintegrationTestSetEnv.sh
-
 echo "Running the vhs clip integration test."
 echo "This tests just ensures that at least one file makes it through the workflow"
+export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
+
 
 cd ..
 rm -r logs/*
