@@ -1,3 +1,12 @@
+Version 2.1
+===========
+* clip workflow now updated with crosscheck characterisation and validation
+
+Version 2.0
+===========
+* new version 2.0 now depends on vhsdomsingester version 2.0 and youseedomsingester version 2.0
+Notice new config file format for doms ingester
+
 Version 1.1
 ===========
 * Changelog now included in the release package.
