@@ -35,3 +35,14 @@ This can be run directly from maven on the developer's own machine:
 In normal usage, the entry point for the workflow is the utility script `startVHS2Workflow.sh` . (Run with no arguments for usage information.)
 
 
+## Comments File JSON
+
+See `VideoFileObject.java` in [https://github.com/statsbiblioteket/digivid-processor] project and 
+[https://sbprojects.statsbiblioteket.dk/display/VIDDIG/Metadata+Model] for all details.
+
+Example:
+
+    {"filename":"dr1_digivid_1301643600-2011-04-01-09.40.00_1427911200-2015-04-01-20.00.00.ts",
+    "encoderName":"PC670","startDate":1301643600000,"endDate":1427911200000,"channel":"dr1",
+    "checksum":"130cd70f6a8079ae637df3e06a74c16324393180","quality":"5 (Average Quality"}
+
