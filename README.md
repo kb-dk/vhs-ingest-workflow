@@ -37,8 +37,10 @@ In normal usage, the entry point for the workflow is the utility script `startVH
 
 ## Comments File JSON
 
-See `VideoFileObject.java` in [https://github.com/statsbiblioteket/digivid-processor] project and 
-[https://sbprojects.statsbiblioteket.dk/display/VIDDIG/Metadata+Model] for all details.
+See `VideoFileObject.java` in 
+[https://github.com/statsbiblioteket/digivid-processor](https://github.com/statsbiblioteket/digivid-processor) project and 
+[https://sbprojects.statsbiblioteket.dk/display/VIDDIG/Metadata+Model](https://sbprojects.statsbiblioteket.dk/display/VIDDIG/Metadata+Model) 
+for all details.
 
 Example:
 
