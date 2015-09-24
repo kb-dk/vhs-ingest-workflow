@@ -22,11 +22,3 @@ RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
-
-COUNT=`ls -1 $VHSINGEST_LOGS | grep -v \.error | wc -l`
-echo $COUNT;
-if [ "$COUNT" -gt "0" ]; then
-    exit 0
-else
-    exit 1;
-fi

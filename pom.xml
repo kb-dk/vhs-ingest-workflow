@@ -44,6 +44,8 @@
 
         <!--Shell script name-->
         <ffprobe.profile.validator>ffprobe-profile-validator</ffprobe.profile.validator>
+        <crosscheck.profile.validator>crosscheck-profile-validator</crosscheck.profile.validator>
+
         <!--maven project-->
         <profile.validator>profile-validator</profile.validator>
 

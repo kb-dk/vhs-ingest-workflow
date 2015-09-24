@@ -8,7 +8,6 @@ export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
 
 
 cd ..
-rm -r logs/*
 ./bin/ingestVHSClip.sh "-inputvalue" "inputfile" "/home/tvtape/testfiles/localhost/Klip_18_2_2005_15_56.mpeg" \
 "-inputvalue" "programPid" "uuid:4b48d89f-741a-498e-92f1-0b39ea2eef4b" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
@@ -17,14 +16,6 @@ rm -r logs/*
 RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
-fi
-
-COUNT=`ls -1 $VHSINGEST_LOGS | grep -v \.error | wc -l`
-echo $COUNT;
-if [ "$COUNT" -gt "0" ]; then
-    exit 0
-else
-    exit 1;
 fi
 
 

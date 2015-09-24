@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WD=$(pwd)
+SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $(dirname $(readlink -f $0))
 
 ENTITY="$1"
@@ -9,13 +10,14 @@ CHECKSUM="$3"
 FFPROBEPROFILE_LOCATION="$4"
 FFPROBEERROR_LOCATION="$5"
 METADATA_LOCATION="$6"
-USERNAME="$7"
-PASSWORD="$8"
-PID="$9"
+CROSSCHECKPROFILE_LOCATION="$7"
+USERNAME="$8"
+PASSWORD="$9"
+PID="${10}"
 
 NAME=$(basename $0 .sh)
 
-source "env.sh"
+source $SCRIPT_PATH/env.sh
 
 cd $WD
 APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.project}"
@@ -32,6 +34,13 @@ CMD="$JAVA_HOME/bin/java -cp $APPDIR/bin/*:$APPDIR/external-products/*:$(dirname
  -user $USERNAME \
  -pass $PASSWORD \
  -programpid $PID"
+
+
+firstLineCrossCheck=$(head -1 $CROSSCHECKPROFILE_LOCATION)
+if [ -n "$firstLineCrossCheck" ] && [ "$firstLineCrossCheck" != "NoProfile" ]; then
+   CMD="$CMD \
+  -crosscheck $CROSSCHECKPROFILE_LOCATION"
+fi
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WD=$(pwd)
+SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $(dirname $(readlink -f $0))
 
 ENTITY=$1
@@ -16,7 +17,7 @@ PASSWORD=$8
 
 NAME=$(basename $0 .sh)
 
-source env.sh
+source $SCRIPT_PATH/env.sh
 
 APPDIR="$VHSINGEST_COMPONENTS/${doms.ingester.vhsfile}"
 

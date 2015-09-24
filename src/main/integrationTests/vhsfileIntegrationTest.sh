@@ -13,7 +13,6 @@ source "/opt/ffmpeg26/enable"
 which ffmpeg
 
 cd ..
-rm -r logs/*
 
 ./bin/ingestVHSFile.sh "-inputvalue" "vhsfile" "/home/tvtape/testfiles/localhost/Colossus_20140923_1039.ts" \
 "-inputvalue" "vhslabel" "foobarbaz" \
@@ -27,12 +26,4 @@ rm -r logs/*
 RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
-fi
-
-COUNT=`ls -1 $VHSINGEST_LOGS | grep -v \.error | wc -l`
-echo $COUNT;
-if [ "$COUNT" -gt "0" ]; then
-    exit 0
-else
-    exit 1;
 fi
