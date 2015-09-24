@@ -15,7 +15,7 @@ source $SCRIPT_PATH/env.sh
 
 APPDIR="$VHSINGEST_COMPONENTS/${profile.validator}/"
 
-CMD="$APPDIR/bin/validateXmlWithProfile.sh $WD/$XML $CONFIGFILE"
+CMD="$APPDIR/bin/validateXmlWithProfile.sh $ENTITY $WD/$XML $CONFIGFILE $CHANNELID"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
