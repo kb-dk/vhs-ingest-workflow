@@ -32,6 +32,20 @@
             <scope>runtime</scope>
         </dependencySet>
 
+
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>${install.components.dir}/${crosscheck.characteriser}/bin</outputDirectory>
+            <directoryMode>0755</directoryMode>
+            <useTransitiveDependencies>false</useTransitiveDependencies>
+            <unpack>true</unpack>
+            <includes>
+                <include>${medieplatform}:${crosscheck.characteriser}</include>
+            </includes>
+            <scope>runtime</scope>
+        </dependencySet>
+
+
         <dependencySet>
             <useProjectArtifact>false</useProjectArtifact>
             <outputDirectory>${install.components.dir}/${profile.validator}/bin</outputDirectory>
@@ -240,9 +254,23 @@
             <filtered>true</filtered>
         </file>
         <file>
+            <source>src/main/scripts/crosscheck.characteriser.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${crosscheck.characteriser}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
             <source>src/main/scripts/ffprobe.profile.validator.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>
             <destName>${ffprobe.profile.validator}.sh</destName>
+            <fileMode>0744</fileMode>
+            <filtered>true</filtered>
+        </file>
+        <file>
+            <source>src/main/scripts/crosscheck.profile.validator.sh</source>
+            <outputDirectory>${install.script.dir}</outputDirectory>
+            <destName>${crosscheck.profile.validator}.sh</destName>
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
@@ -260,7 +288,6 @@
             <fileMode>0744</fileMode>
             <filtered>true</filtered>
         </file>
-
         <file>
             <source>src/main/scripts/workflow.completed.sh</source>
             <outputDirectory>${install.script.dir}</outputDirectory>

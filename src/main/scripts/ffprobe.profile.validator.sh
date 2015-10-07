@@ -1,8 +1,8 @@
 #!/bin/bash
 
 WD=$PWD
+SCRIPT_PATH=$(dirname $(readlink -f $0))
 cd $(dirname $(readlink -f $0))
-
 
 
 ENTITY=$1
@@ -11,11 +11,11 @@ CHANNELID=$3
 
 NAME=`basename $0 .sh`
 
-source env.sh
+source $SCRIPT_PATH/env.sh
 
 APPDIR="$VHSINGEST_COMPONENTS/${profile.validator}/"
 
-CMD="$APPDIR/bin/validateXmlWithProfile.sh $WD/$XML $CONFIGFILE"
+CMD="$APPDIR/bin/validateXmlWithProfile.sh $ENTITY $WD/$XML $CONFIGFILE $CHANNELID"
 
 OUTPUT="`execute "$PWD" "$CMD" "$NAME" "$ENTITY"`"
 RETURNCODE=$?
