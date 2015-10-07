@@ -1,3 +1,8 @@
+Version 2.2
+===========
+* file workflow now updated with crosscheck characterisation and validation
+* JSON Comments "channelLabel" -> "channel" update to workflow
+
 Version 2.1
 ===========
 * clip workflow now updated with crosscheck characterisation and validation
