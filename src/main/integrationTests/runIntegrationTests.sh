@@ -7,8 +7,10 @@ echo "Note: Maven will probably tell you the test was successful. To see the ful
 echo "/home/tvtape/services/vhs-ingest-workflow/logs/files/"
 
 VHSINGEST_LOGS=$HOME/services/vhs-ingest-workflow/logs/Workflow1_output
-for test in vhsclipIntegrationTest.sh; do
+# Note: the test works when the 3 different tests are run in this specific order
+for test in  vhsclipIntegrationTest.sh vhs2clipIntegrationTest.sh vhs2fileIntegrationTest.sh; do
     rm -rf $VHSINGEST_LOGS
+    echo $test
     ./$test
     RETURNCODE="$?"
     if [ "$RETURNCODE" -ne "0" ]; then
@@ -20,9 +22,8 @@ for test in vhsclipIntegrationTest.sh; do
         exit 1
     fi
     echo "$test ran succesfully"
+    echo ""
 done
 
 echo "Tests complete, none failed"
 
-# vhs2fileIntegrationTest.sh vhs2clipIntegrationTest.sh
-# Note: the test works when the 3 different tests are run individually, but not if you run them together!!!
