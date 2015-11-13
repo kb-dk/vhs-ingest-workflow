@@ -15,7 +15,7 @@ source "/opt/ffmpeg26/enable"
 
 cd ..
 
-./bin/startVHS2Workflow.sh --vhsfile /home/tvtape/testfiles/localhost/Colossus_VHS-files-workflow-test.ts --jsonfile /home/tvtape/testfiles/Colossus_VHS-files-workflow-test.ts.comments
+./bin/startVHS2Workflow.sh --vhsfile /scratch-tvtape-test/Colossus_VHS-files-workflow-test.ts --jsonfile /scratch-tvtape-test/Colossus_VHS-files-workflow-test.ts.comments
 
 RETURNCODE=$?
 if [ "$RETURNCODE" -ne "0" ]; then
