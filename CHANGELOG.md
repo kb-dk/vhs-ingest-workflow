@@ -1,3 +1,7 @@
+Version 2.3
+===========
+* file workflow now updated to _not_ copy file
+
 Version 2.2
 ===========
 * file workflow now updated with crosscheck characterisation and validation
