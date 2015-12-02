@@ -9,6 +9,7 @@ Steps to release
 
     * Find new version number from pom.xml
     * Find changes from GIT log and insert the relevant parts
+    * Commit changes
  
 * Then release:prepare using Maven
 

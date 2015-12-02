@@ -1,3 +1,8 @@
+Version 2.4
+===========
+* changed clip workflow input file name back to mpgfile for compatibiblity with DomsGui component (though it can now be either an mpg- or a ts-file)
+* changed file workflow to give better crosscheck log output
+
 Version 2.3
 ===========
 * file workflow now updated to _not_ copy file
