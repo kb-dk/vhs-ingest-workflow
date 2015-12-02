@@ -8,7 +8,7 @@ export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
 
 
 cd ..
-./bin/ingestVHSClip.sh "-inputvalue" "inputfile" "/home/tvtape/testfiles/localhost/dr1_1995-02-18_18.50-18.51.mpg" \
+./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/localhost/dr1_1995-02-18_18.50-18.51.mpg" \
 "-inputvalue" "programPid" "uuid:a3d19569-07c9-480f-8561-6dbf5e11d144" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass" 

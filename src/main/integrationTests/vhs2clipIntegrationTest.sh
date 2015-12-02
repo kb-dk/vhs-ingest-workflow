@@ -7,7 +7,7 @@ echo "This tests just ensures that at least one ts file makes it through the wor
 export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
 
 cd ..
-./bin/ingestVHSClip.sh "-inputvalue" "inputfile" "/home/tvtape/testfiles/localhost/Colossus_20150624_1341.ts" \
+./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/localhost/Colossus_20150624_1341.ts" \
 "-inputvalue" "programPid" "uuid:0e7ef9a9-eeb1-4584-aee5-458fb12d55dc" \
 "-inputvalue" "domsUser" "fedoraAdmin" \
 "-inputvalue" "domsPass" "fedoraAdminPass"
