@@ -1,4 +1,13 @@
-{"filename":"tv2_digivid_735069900-1993-04-17-20.05.00_735072900-1993-04-17-20.55.00.ts","vhsLabel":"tape:75",
-  "comments":"What a fine tape you are.",
-  "encoderName":"PC601","startDate":735069900000,"endDate":735072900000,"channelLabel":"tv2","checksum":"d41d8cd98f00b204e9800998ecf8427e",
-  "quality":"9: amazing!","manufacturer":"Philips","model":"NV1","serial_number":"HQ567"}
+{"filename":"tv2n_digivid_1438898400-2015-08-07-00.00.00_1438898400-2015-08-07-00.00.00.ts",
+"filesize":124158,
+"startDate":1438898400000,
+"vhsLabel":"zælsdjfaæ",
+"comment":"etst",
+"quality":"7",
+"channel":"tv2n",
+"endDate":1438898400000,
+"checksum":"a694ee738d118a214765fc3996a1fbb2",
+"manufacturer":"Philips",
+"model":"SH543",
+"serialNo":"A123",
+"encoderName":"localhost.localdomain"}

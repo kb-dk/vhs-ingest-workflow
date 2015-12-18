@@ -44,7 +44,8 @@ for all details.
 
 Example:
 
-    {"filename":"dr1_digivid_1301643600-2011-04-01-09.40.00_1427911200-2015-04-01-20.00.00.ts",
-    "encoderName":"PC670","startDate":1301643600000,"endDate":1427911200000,"channel":"dr1",
-    "checksum":"130cd70f6a8079ae637df3e06a74c16324393180","quality":"5 (Average Quality"}
+    {"filename":"tv2n_digivid_1438898400-2015-08-07-00.00.00_1438898400-2015-08-07-00.00.00.ts",
+    "filesize":124158, "startDate":1438898400000, "vhsLabel":"zælsdjfaæ", "comment":"etst",
+    "quality":"7", "channel":"tv2n", "endDate":1438898400000, "checksum":"a694ee738d118a214765fc3996a1fbb2",
+    "manufacturer":"Philips", "model":"SH543", "serialNo":"A123", "encoderName":"localhost.localdomain"}
 
