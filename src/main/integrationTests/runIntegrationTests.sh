@@ -8,7 +8,7 @@ echo "/home/tvtape/services/vhs-ingest-workflow/logs/files/"
 
 VHSINGEST_LOGS=$HOME/services/vhs-ingest-workflow/logs/Workflow1_output
 # Note: the test works when the 3 different tests are run in this specific order
-for test in  vhsclipIntegrationTest.sh vhs2clipIntegrationTest.sh vhs2fileIntegrationTest.sh; do
+for test in vhsclipIntegrationTest.sh vhs2clipIntegrationTest.sh vhs2fileIntegrationTest.sh; do
     rm -rf $VHSINGEST_LOGS
     echo $test
     ./$test
@@ -26,4 +26,3 @@ for test in  vhsclipIntegrationTest.sh vhs2clipIntegrationTest.sh vhs2fileIntegr
 done
 
 echo "Tests complete, none failed"
-

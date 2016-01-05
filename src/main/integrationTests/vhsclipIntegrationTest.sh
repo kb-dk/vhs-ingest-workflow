@@ -18,7 +18,3 @@ if [ "$RETURNCODE" -ne "0" ]; then
     exit $RETURNCODE
 fi
 
-
-#"-inputvalue" "programPid" "uuid:ee69215e-57f9-4fc8-b1f0-913a6d4844eb" \
-#"-inputvalue" "programPid" "uuid:4b48d89f-741a-498e-92f1-0b39ea2eef4b" \
-
