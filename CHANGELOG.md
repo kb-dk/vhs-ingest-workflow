@@ -1,3 +1,8 @@
+Version 2.5
+===========
+* Update to correct JSON API
+* Updates tests to new digitized files
+
 Version 2.4
 ===========
 * changed clip workflow input file name back to mpgfile for compatibiblity with DomsGui component (though it can now be either an mpg- or a ts-file)
