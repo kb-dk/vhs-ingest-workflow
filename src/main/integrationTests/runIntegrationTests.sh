@@ -7,7 +7,7 @@ echo "Note: Maven will probably tell you the test was successful. To see the ful
 echo "/home/tvtape/services/vhs-ingest-workflow/logs/files/"
 
 VHSINGEST_LOGS=$HOME/services/vhs-ingest-workflow/logs/Workflow1_output
-for test in vhs2fileIntegrationTest.sh vhsclipIntegrationTest.sh vhs2clipIntegrationTest.sh; do
+for test in vhsclipIntegrationTest.sh vhs2fileIntegrationTest.sh vhs2clipIntegrationTest.sh; do
     rm -rf $VHSINGEST_LOGS
     echo $test
     ./$test
@@ -25,3 +25,5 @@ for test in vhs2fileIntegrationTest.sh vhsclipIntegrationTest.sh vhs2clipIntegra
 done
 
 echo "Tests complete, none failed"
+
+#vhs3clipIntegrationTest.sh is written to fail, so it should be run separately
