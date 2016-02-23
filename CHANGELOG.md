@@ -1,3 +1,9 @@
+Version 2.6
+===========
+
+* clip workflow updated to use different config for ts files in ffprobe validator component
+* tests updated with different log and cache files for ffprobe validation in the different workflows; test designed to fail ffprobe validation now included
+
 Version 2.5
 ===========
 * Update to correct JSON API
