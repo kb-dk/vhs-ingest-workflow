@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 #
 # This is the only file in the vhs-ingest-workflow tree which is likely to
 # require customisation

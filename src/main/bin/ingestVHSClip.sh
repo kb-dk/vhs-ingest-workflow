@@ -21,7 +21,6 @@ if [ -z "$VHSINGEST_HOME" ]; then
    exit 1
 fi
 
-
 if [ -z "$TAVERNA_HOME" ]; then
    echo "TAVERNA_HOME is not set. Must be set before execution. Exiting"
    exit 1
@@ -29,6 +28,11 @@ fi
 
 if [ -z "$JAVA_HOME" ]; then
    echo "JAVA_HOME is not set. Must be set before execution. Exiting"
+   exit 1
+fi
+
+if [ -z "$JAVA8_HOME" ]; then
+   echo "JAVA8_HOME is not set. Must be set before execution. Exiting"
    exit 1
 fi
 

@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-#
 # This file should not normally require modification
 #
 #SCRIPT_PATH=$(dirname $(readlink -f $0))

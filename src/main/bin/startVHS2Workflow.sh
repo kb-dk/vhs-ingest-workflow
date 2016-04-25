@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 SCRIPT_PATH=$(dirname $(readlink -f $0))
 
 print_usage()
 {
-echo "Usage: $(basename $0) --vhsfile <vhsfile> --jsonfile <jsonfile>"
-echo
-echo "--vhsfile relative or absolute path to the digitised VHS video file to be ingested"
-echo "--jsonfile relative or absolute path to the JSON metadata file corresponding to the VHS video file to be ingested"
-echo
+  echo "Usage: $(basename $0) --vhsfile <vhsfile> --jsonfile <jsonfile>"
+  echo
+  echo "--vhsfile relative or absolute path to the digitised VHS video file to be ingested"
+  echo "--jsonfile relative or absolute path to the JSON metadata file corresponding to the VHS video file to be ingested"
+  echo
 }
 
 ARGS=$(getopt -o "" -l "jsonfile:,vhsfile:" -- "$@" );
@@ -34,12 +34,12 @@ while true; do
       JSONFILE="$1"
       shift;
       ;;
-      --)
+    --)
       shift;
       shift;
       break;
       ;;
-       *)
+    *)
       echo "Unknown parameter $1" > /dev/stderr
       print_usage
       exit 1;
@@ -55,6 +55,31 @@ cd $SCRIPT_PATH
 source setup.infrastructure.sh
 source setup.env.sh
 export VHSINGEST_WORKFLOW_CONFIG="$VHSINGEST_CONFIG/vhsfileingestworkflow/"
+
+if [ -z "$VHSINGEST_HOME" ]; then
+  echo "VHSINGEST_HOME is not set. Must be set before execution. Exiting"
+  exit 1
+fi
+
+if [ -z "$TAVERNA_HOME" ]; then
+  echo "TAVERNA_HOME is not set. Must be set before execution. Exiting"
+  exit 1
+fi
+
+if [ -z "$JAVA_HOME" ]; then
+  echo "JAVA_HOME is not set. Must be set before execution. Exiting"
+  exit 1
+fi
+
+if [ -z "$JAVA8_HOME" ]; then
+  echo "JAVA8_HOME is not set. Must be set before execution. Exiting"
+  exit 1
+fi
+
+if [ -z "$VHSINGEST_WORKFLOW_CONFIG" ]; then
+  echo "VHSINGEST_WORKFLOW_CONFIG is not set. Must be set before execution. Exiting"
+  exit 1
+fi
 
 
 VERSION=`head -1 $TAVERNA_HOME/release-notes.txt | sed 's/.$//' | cut -d' ' -f4`

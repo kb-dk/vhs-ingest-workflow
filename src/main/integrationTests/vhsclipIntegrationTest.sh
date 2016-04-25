@@ -5,7 +5,7 @@ cd $(dirname $(readlink -f $0))
 echo "Running the vhs clip integration test for mpeg files."
 echo "This tests just ensures that at least one mpeg file makes it through the workflow"
 export JAVA_HOME="/usr/java/java-1.6.0-sun-1.6.0.33.x86_64"
-
+export JAVA8_HOME=/usr/java/java-1.8.0-oracle-1.8.0.65.x86_64/jre/
 
 cd ..
 ./bin/ingestVHSClip.sh "-inputvalue" "mpgfile" "/home/tvtape/testfiles/localhost/dr1_1995-02-18_18.50-18.51.mpg" \
